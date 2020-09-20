@@ -6,6 +6,32 @@ using UnityEngine.EventSystems;
 public class DragAndDrop : MonoBehaviour
 {
     private GameObject dragItem;
+    public bool isDropZone = false;
+
+    //Drags the clicked item
+    public void DragItem()
+    {
+        dragItem.transform.position = Input.mousePosition;
+    }
+
+    public void DropItem()
+    {
+        if (isDropZone)
+        {
+            switch (dragItem.tag)
+            {
+                case "Masa":
+                    break;
+                case "Filling":
+                    break;
+                case "Husk":
+                    break;
+                default:
+                    Debug.LogError("Uhhhhh");
+                    break;
+            }
+        }
+    }
 
     //Sets the game Object to be dragged
     public void SetDragItem(GameObject item)
@@ -13,9 +39,13 @@ public class DragAndDrop : MonoBehaviour
         dragItem = item;
     }
 
-    //Drags the clicked item
-    public void DragItem()
+    public void EnterDropZone()
     {
-        dragItem.transform.position = Input.mousePosition;
+        isDropZone = true;
+    }
+
+    public void ExitDropZone()
+    {
+        isDropZone = false;
     }
 }
