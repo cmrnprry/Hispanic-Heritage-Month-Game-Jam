@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
 
@@ -12,36 +13,94 @@ public enum GameState
 public class DragAndDrop : MonoBehaviour
 {
     private GameObject dragItem;
+
+    public Image[] images;
+    public Image husk;
     public bool isDropZone = false;
     public Texture2D open, closed;
     public GameState state = GameState.Masa;
 
+    public Animator tray;
+    public Animator tamale;
+
+
+    private void Start()
+    {
+        tray.GetComponent<Animator>();
+        tamale.GetComponent<Animator>();
+        StartCoroutine(NextTamale());
+
+    }
     private void Update()
     {
-        switch (state)
-        {
-            case GameState.Masa:
-                break;
-            case GameState.Filling:
-                break;
-            case GameState.Fold:
-                break;
-            default:
-                Debug.LogError("State is wrong");
-                break;
-        }
-
         if (Input.GetMouseButton(0))
         {
-            Debug.Log("closed");
             UpdateHand(closed);
         }
         else
         {
-            Debug.Log("open");
-
             UpdateHand(open);
         }
+    }
+
+    void Masa()
+    {
+        if (state != GameState.Masa)
+        {
+            Debug.Log("wrong :(");
+        }
+        else
+        {
+            state = GameState.Filling;
+            //husk = images[1];
+            Debug.Log("add it");
+        }
+    }
+
+    void Filling()
+    {
+        if (state != GameState.Filling)
+        {
+            Debug.Log("wrong :(");
+        }
+        else
+        {
+            state = GameState.Fold;
+            //husk = images[2];
+            Debug.Log("add it");
+        }
+    }
+
+    void Fold()
+    {
+        if (state != GameState.Fold)
+        {
+            Debug.Log("wrong :(");
+        }
+        else
+        {
+            state = GameState.Masa;
+            //husk = images[3];
+            Debug.Log("add it");
+            StartCoroutine(NextTamale());
+        }
+    }
+
+    IEnumerator NextTamale()
+    {
+        tray.SetTrigger("Show");
+
+        yield return new WaitForSecondsRealtime(1.5f);
+
+        tamale.SetTrigger("Slide");
+        yield return new WaitForSecondsRealtime(1.5f);
+
+        tray.SetTrigger("Hide");
+        tamale.SetTrigger("Hide");
+
+        yield return new WaitForSecondsRealtime(1f);
+
+        tamale.SetTrigger("New");
     }
 
     private void UpdateHand(Texture2D hand)
@@ -60,8 +119,10 @@ public class DragAndDrop : MonoBehaviour
             switch (dragItem.tag)
             {
                 case "Masa":
+                    Masa();
                     break;
                 case "Filling":
+                    Filling();
                     break;
                 case "Husk":
                     break;
