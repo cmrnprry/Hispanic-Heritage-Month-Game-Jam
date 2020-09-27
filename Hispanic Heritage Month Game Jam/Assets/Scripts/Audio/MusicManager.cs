@@ -21,6 +21,7 @@ public class MusicManager : MonoBehaviour
     [SerializeField] private AudioClip mainSectionClip;
     [SerializeField] private AudioClip[] endingClips;
     private int randomIndex;
+    private int lastIndex;
     //Timers
     private double endingDelayInSeconds = 24;
     private double loopDuration = 31;
@@ -47,13 +48,19 @@ public class MusicManager : MonoBehaviour
         toggleMainSectionSource = 1 - toggleMainSectionSource;
         toggleEndingSource = 1 - toggleEndingSource;
 
+        //Get random index for the ending clip and check if it's the same as the last loop
+        while(randomIndex == lastIndex)
+        {
+            randomIndex = Random.Range(0, endingClips.Length);
+        }
+        lastIndex = randomIndex;
+
         //Assign clips to audio sources
         mainSectionSource[toggleMainSectionSource].clip = mainSectionClip;
-        randomIndex = Random.Range(0, endingClips.Length);
         endingSource[toggleEndingSource].clip = endingClips[randomIndex];
 
         //Schedule audio sources
-        mainSectionSource[toggleMainSectionSource].PlayScheduled(nextStartTime) ;
+        mainSectionSource[toggleMainSectionSource].PlayScheduled(nextStartTime);
         endingSource[toggleEndingSource].PlayScheduled(nextStartTime + endingDelayInSeconds);
 
         //Increment nextStartTime with total duration for the loop
