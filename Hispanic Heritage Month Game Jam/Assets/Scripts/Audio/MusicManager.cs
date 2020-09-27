@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class MusicManager : MonoBehaviour
 {
@@ -12,16 +13,37 @@ public class MusicManager : MonoBehaviour
 
     #region Variable Declaration
     [Header("AUDIO SOURCES")]
-    [SerializeField] private AudioSource[] mainSectionSource;
-    [SerializeField] private AudioSource[] endingSource;
-    private int toggleMainSectionSource;
-    private int toggleEndingSource;
+    [SerializeField] private AudioSource[] baseMainSectionSource;
+    [SerializeField] private AudioSource[] baseEndingSource;
+    [SerializeField] private AudioSource[] layer2Source;
+    [SerializeField] private AudioSource[] layer3MainSectionSource;
+    [SerializeField] private AudioSource[] layer3EndingSource;
+    private int toggleAudioSource;
     [Space]
     [Header("AUDIO CLIPS")]
-    [SerializeField] private AudioClip mainSectionClip;
-    [SerializeField] private AudioClip[] endingClips;
-    private int randomIndex;
-    private int lastIndex;
+    [SerializeField] private AudioClip baseMainSectionClip;
+    [SerializeField] private AudioClip[] baseEndingClips;
+    [SerializeField] private AudioClip[] layer2Clips;
+    [SerializeField] private AudioClip[] layer3MainSectionClips;
+    [SerializeField] private AudioClip[] layer3EndingClips;
+    private int baseRandomIndex;
+    private int baseLastIndex;
+    private int layer2RandomIndex;
+    private int layer2LastIndex;
+    private int layer3MainRandomIndex;
+    private int layer3MainLastIndex;
+    private int layer3EndingRandomIndex;
+    private int layer3EndingLastIndex;
+    [Space]
+    [Header("SNAPSHOTS")]
+    [SerializeField] private AudioMixerSnapshot baseLayerOnly;
+    [SerializeField] private AudioMixerSnapshot layer2On;
+    [SerializeField] private AudioMixerSnapshot layer3On;
+    [SerializeField] private AudioMixerSnapshot allLayerson;
+    [SerializeField] private AudioMixerSnapshot musicOff;
+    [SerializeField] private float fadeInTime;
+    [SerializeField] private float fadeOutTime;
+
     //Timers
     private double endingDelayInSeconds = 24;
     private double loopDuration = 31;
@@ -38,33 +60,124 @@ public class MusicManager : MonoBehaviour
     {
         if(AudioSettings.dspTime > nextStartTime - 1)
         {
-           ConcatenateMainSectionWithRandomEnding();
+            PlayAndLoopMusic();
+        }
+
+        //Change Layer Based On Input For Testing Only
+        if (Input.GetKeyDown("z"))
+        {
+            MusicGuitarOnly();
+        }
+        if (Input.GetKeyDown("x"))
+        {
+            MusicMandolinOn();
+        }
+        if (Input.GetKeyDown("c"))
+        {
+            MusicViolaOn();
+        }
+        if (Input.GetKeyDown("v"))
+        {
+            MusicFull();
+        }
+        if (Input.GetKeyDown("b"))
+        {
+            MusicOff();
         }
     }
-    #region Music Logic
-    private void ConcatenateMainSectionWithRandomEnding()
+
+    #region Music Concatenation Logic
+    private void PlayAndLoopMusic()
     {
-        //Switches toggle variables to alternate between audio sources for PlayScheduled()
-        toggleMainSectionSource = 1 - toggleMainSectionSource;
-        toggleEndingSource = 1 - toggleEndingSource;
+        ToggleSourceAndRandomizeAudioClips();
+        AssignRandomClipsToAudioSources();
+        ScheduleAudioSourcesAndIncrementNextStartTime();
+    }
 
-        //Get random index for the ending clip and check if it's the same as the last loop
-        while(randomIndex == lastIndex)
+    private void ToggleSourceAndRandomizeAudioClips()
+    {
+        //Switches toggle variable to alternate between audio sources for PlayScheduled()
+        toggleAudioSource = 1 - toggleAudioSource;
+
+        //Get random index for random clips and check if it's the same as the last loop
+        while (baseRandomIndex == baseLastIndex)
         {
-            randomIndex = Random.Range(0, endingClips.Length);
+            baseRandomIndex = Random.Range(0, baseEndingClips.Length);
         }
-        lastIndex = randomIndex;
+        baseLastIndex = baseRandomIndex;
 
-        //Assign clips to audio sources
-        mainSectionSource[toggleMainSectionSource].clip = mainSectionClip;
-        endingSource[toggleEndingSource].clip = endingClips[randomIndex];
+        while (layer2RandomIndex == layer2LastIndex)
+        {
+            layer2RandomIndex = Random.Range(0, layer2Clips.Length);
+        }
+        layer2LastIndex = layer2RandomIndex;
 
+        while (layer3MainRandomIndex == layer3MainLastIndex)
+        {
+            layer3MainRandomIndex = Random.Range(0, layer3MainSectionClips.Length);
+        }
+        layer3MainLastIndex = layer3MainRandomIndex;
+
+        while (layer3EndingRandomIndex == layer3EndingLastIndex)
+        {
+            layer3EndingRandomIndex = Random.Range(0, layer3EndingClips.Length);
+        }
+        layer3EndingLastIndex = layer3EndingRandomIndex;
+
+    }
+
+    private void AssignRandomClipsToAudioSources()
+    {
+        baseMainSectionSource[toggleAudioSource].clip = baseMainSectionClip;
+        baseEndingSource[toggleAudioSource].clip = baseEndingClips[baseRandomIndex];
+
+        layer2Source[toggleAudioSource].clip = layer2Clips[layer2RandomIndex];
+
+        layer3MainSectionSource[toggleAudioSource].clip = layer3MainSectionClips[layer3MainRandomIndex];
+        layer3EndingSource[toggleAudioSource].clip = layer3EndingClips[layer3EndingRandomIndex];
+    }
+
+    private void ScheduleAudioSourcesAndIncrementNextStartTime()
+    {
         //Schedule audio sources
-        mainSectionSource[toggleMainSectionSource].PlayScheduled(nextStartTime);
-        endingSource[toggleEndingSource].PlayScheduled(nextStartTime + endingDelayInSeconds);
+        baseMainSectionSource[toggleAudioSource].PlayScheduled(nextStartTime);
+        baseEndingSource[toggleAudioSource].PlayScheduled(nextStartTime + endingDelayInSeconds);
+
+        layer2Source[toggleAudioSource].PlayScheduled(nextStartTime);
+
+        layer3MainSectionSource[toggleAudioSource].PlayScheduled(nextStartTime);
+        layer3EndingSource[toggleAudioSource].PlayScheduled(nextStartTime + endingDelayInSeconds);
 
         //Increment nextStartTime with total duration for the loop
         nextStartTime += loopDuration;
+    }
+    #endregion
+
+    #region Music Layering Logic
+
+    public void MusicGuitarOnly()
+    {
+        baseLayerOnly.TransitionTo(fadeOutTime);
+    }
+
+    public void MusicMandolinOn()
+    {
+        layer2On.TransitionTo(fadeInTime);
+    }
+
+    public void MusicViolaOn()
+    {
+        layer3On.TransitionTo(fadeInTime);
+    }
+
+    public void MusicFull()
+    {
+        allLayerson.TransitionTo(fadeInTime);
+    }
+
+    public void MusicOff()
+    {
+        musicOff.TransitionTo(fadeOutTime);
     }
     #endregion
 }
