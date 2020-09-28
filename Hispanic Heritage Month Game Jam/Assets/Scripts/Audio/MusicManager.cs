@@ -6,9 +6,13 @@ using UnityEngine.Audio;
 public class MusicManager : MonoBehaviour
 {
     /* TL;DR:
-     * I'm using PlayScheduled to stitch together two audio files as seamlessly as possible.
-     * The gist of it is that there's the main section of the loop that remains the same but 
-     * the endings of the loop are selected at random so we can get a lot of variety out of little musical material
+     * I'm using PlayScheduled to stitch together audio files as seamlessly as possible.
+     * Base layer: Guitar loop with one main section that remains the same but 
+     * the endings of the loop are selected at randomly.
+     * Layer 2: There are three variants of the mandolin loop that are selected randomly every loop
+     * Layer 3: Same thing as base layer but the main section is also randomly selected. Brazilian viola.
+     * 
+     * The layering logic is currently being done with audio mixer snapshots
      * */
 
     #region Variable Declaration
@@ -43,6 +47,7 @@ public class MusicManager : MonoBehaviour
     [SerializeField] private AudioMixerSnapshot musicOff;
     [SerializeField] private float fadeInTime;
     [SerializeField] private float fadeOutTime;
+    [SerializeField] private float musicOutTime;
 
     //Timers
     private double endingDelayInSeconds = 24;
@@ -63,7 +68,7 @@ public class MusicManager : MonoBehaviour
             PlayAndLoopMusic();
         }
 
-        //Change Layer Based On Input For Testing Only
+        //Change layer based on input for testing only
         if (Input.GetKeyDown("z"))
         {
             MusicGuitarOnly();
@@ -100,30 +105,27 @@ public class MusicManager : MonoBehaviour
         toggleAudioSource = 1 - toggleAudioSource;
 
         //Get random index for random clips and check if it's the same as the last loop
+
+        //Base Layer
         while (baseRandomIndex == baseLastIndex)
         {
             baseRandomIndex = Random.Range(0, baseEndingClips.Length);
         }
         baseLastIndex = baseRandomIndex;
-
+        //Layer2
         while (layer2RandomIndex == layer2LastIndex)
         {
             layer2RandomIndex = Random.Range(0, layer2Clips.Length);
         }
         layer2LastIndex = layer2RandomIndex;
-
+        //Layer3
         while (layer3MainRandomIndex == layer3MainLastIndex)
         {
             layer3MainRandomIndex = Random.Range(0, layer3MainSectionClips.Length);
         }
         layer3MainLastIndex = layer3MainRandomIndex;
 
-        while (layer3EndingRandomIndex == layer3EndingLastIndex)
-        {
-            layer3EndingRandomIndex = Random.Range(0, layer3EndingClips.Length);
-        }
-        layer3EndingLastIndex = layer3EndingRandomIndex;
-
+        layer3EndingRandomIndex = Random.Range(0, layer3EndingClips.Length);
     }
 
     private void AssignRandomClipsToAudioSources()
@@ -177,7 +179,7 @@ public class MusicManager : MonoBehaviour
 
     public void MusicOff()
     {
-        musicOff.TransitionTo(fadeOutTime);
+        musicOff.TransitionTo(musicOutTime);
     }
     #endregion
 }
