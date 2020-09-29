@@ -634,8 +634,9 @@ MonoBehaviour:
     type: 2}
   musicOff: {fileID: 2858981487740924368, guid: e9973adc677384407abdde7d6b25ea63,
     type: 2}
-  fadeInTime: 1
-  fadeOutTime: 3
+  fadeInTime: 2
+  fadeOutTime: 4
+  musicOutTime: 10
 --- !u!1 &2371168814347498339
 GameObject:
   m_ObjectHideFlags: 0
