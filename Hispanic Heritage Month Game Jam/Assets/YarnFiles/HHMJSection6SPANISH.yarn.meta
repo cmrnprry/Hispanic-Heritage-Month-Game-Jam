@@ -1,0 +1,24 @@
+fileFormatVersion: 2
+guid: 6d0b2eeb6158d8d4d83ccb135c890d74
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 94073015eacc34c1d8fc6786e43d60ca, type: 3}
+  baseLanguageID: 
+  stringIDs:
+  - HHMJSection6SPANISH-Start-0
+  - HHMJSection6SPANISH-Start-1
+  - HHMJSection6SPANISH-Start-2
+  - HHMJSection6SPANISH-Start-3
+  - HHMJSection6SPANISH-Start-4
+  - HHMJSection6SPANISH-Start-5
+  - HHMJSection6SPANISH-Start-6
+  compilationStatus: 1
+  isSuccesfullyCompiled: 1
+  compilationErrorMessage: 
+  baseLanguage: {instanceID: 0}
+  localizations: []
