@@ -47,45 +47,55 @@ public class DragAndDrop : MonoBehaviour
             UpdateHand(open);
         }
 
-        if(Input.GetMouseButtonUp(0) && isDropZone)
+        if (Input.GetMouseButtonUp(0))
         {
+            closed = hands[0];
             DropItem();
         }
     }
 
     void Masa()
     {
-        if (state != GameState.Masa)
+        if (isDropZone)
         {
-            Debug.Log("wrong :(");
+            if (state != GameState.Masa)
+            {
+                Debug.Log("wrong :(");
+            }
+            else
+            {
+                state = GameState.Filling;
+                husk.sprite = images[1];
+                Debug.Log("add it");
+            }
         }
-        else
-        {
-            state = GameState.Filling;
-            husk.sprite = images[1];
-            Debug.Log("add it");
-        }
+
 
         AddSpoon(1);
     }
 
     void Filling()
     {
-        if (state != GameState.Filling)
-        {
-            Debug.Log("wrong :(");
-        }
-        else
-        {
-           // state = GameState.Fold;
-            husk.sprite = images[2];
-            Debug.Log("add it");
 
-            state = GameState.Masa;
-            //husk = images[3];
-            Debug.Log("add it");
-            StartCoroutine(NextTamale());
+        if (isDropZone)
+        {
+            if (state != GameState.Filling)
+            {
+                Debug.Log("wrong :(");
+            }
+            else
+            {
+                // state = GameState.Fold;
+                husk.sprite = images[2];
+                Debug.Log("add it");
+
+                state = GameState.Masa;
+                //husk = images[3];
+                Debug.Log("add it");
+                StartCoroutine(NextTamale());
+            }
         }
+
 
         AddSpoon(2);
     }
@@ -134,23 +144,19 @@ public class DragAndDrop : MonoBehaviour
     public void DropItem()
     {
         Debug.Log("here");
-        if (isDropZone)
+        switch (dragItem.tag)
         {
-            switch (dragItem.tag)
-            {
-                case "Masa":
-                    Masa();
-                    break;
-                case "Filling":
-                    Filling();
-                    break;
-                case "Husk":
-                    break;
-                default:
-                    Debug.LogError("Uhhhhh");
-                    break;
-            }
+            case "Masa":
+                Masa();
+                break;
+            case "Filling":
+                Filling();
+                break;
+            default:
+                Debug.LogError("Uhhhhh");
+                break;
         }
+
     }
 
     //Drags the clicked item
