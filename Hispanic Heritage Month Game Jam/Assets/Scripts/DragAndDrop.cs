@@ -14,11 +14,16 @@ public class DragAndDrop : MonoBehaviour
 {
     private GameObject dragItem;
 
-    public Image[] images;
+    public Sprite[] images;
     public Image husk;
     public bool isDropZone = false;
     public Texture2D open, closed;
+    public Texture2D[] hands;
     public GameState state = GameState.Masa;
+
+    //Images to remove masa/filling spoon
+    public Image masa, masaSpoon;
+    public Image filling, fillingSpoon;
 
     public Animator tray;
     public Animator tamale;
@@ -28,7 +33,7 @@ public class DragAndDrop : MonoBehaviour
     {
         tray.GetComponent<Animator>();
         tamale.GetComponent<Animator>();
-        StartCoroutine(NextTamale());
+        //  StartCoroutine(NextTamale());
 
     }
     private void Update()
@@ -41,6 +46,11 @@ public class DragAndDrop : MonoBehaviour
         {
             UpdateHand(open);
         }
+
+        if(Input.GetMouseButtonUp(0) && isDropZone)
+        {
+            DropItem();
+        }
     }
 
     void Masa()
@@ -52,9 +62,11 @@ public class DragAndDrop : MonoBehaviour
         else
         {
             state = GameState.Filling;
-            //husk = images[1];
+            husk.sprite = images[1];
             Debug.Log("add it");
         }
+
+        AddSpoon(1);
     }
 
     void Filling()
@@ -65,10 +77,17 @@ public class DragAndDrop : MonoBehaviour
         }
         else
         {
-            state = GameState.Fold;
-            //husk = images[2];
+           // state = GameState.Fold;
+            husk.sprite = images[2];
             Debug.Log("add it");
+
+            state = GameState.Masa;
+            //husk = images[3];
+            Debug.Log("add it");
+            StartCoroutine(NextTamale());
         }
+
+        AddSpoon(2);
     }
 
     void Fold()
@@ -99,7 +118,7 @@ public class DragAndDrop : MonoBehaviour
         tamale.SetTrigger("Hide");
 
         yield return new WaitForSecondsRealtime(1f);
-
+        husk.sprite = images[0];
         tamale.SetTrigger("New");
     }
 
@@ -114,6 +133,7 @@ public class DragAndDrop : MonoBehaviour
 
     public void DropItem()
     {
+        Debug.Log("here");
         if (isDropZone)
         {
             switch (dragItem.tag)
@@ -143,6 +163,47 @@ public class DragAndDrop : MonoBehaviour
     public void SetDragItem(GameObject item)
     {
         dragItem = item;
+
+        switch (dragItem.tag)
+        {
+            case "Masa":
+                closed = hands[1];
+                break;
+            case "Filling":
+                closed = hands[2];
+                break;
+            default:
+                closed = hands[0];
+                break;
+        }
+    }
+
+    public void RemoveSpoon(int type)
+    {
+        if (type == 1)
+        {
+            masa.gameObject.SetActive(false);
+            masaSpoon.gameObject.SetActive(false);
+        }
+        else if (type == 2)
+        {
+            filling.gameObject.SetActive(false);
+            fillingSpoon.gameObject.SetActive(false);
+        }
+    }
+
+    void AddSpoon(int type)
+    {
+        if (type == 1)
+        {
+            masa.gameObject.SetActive(true);
+            masaSpoon.gameObject.SetActive(true);
+        }
+        else if (type == 2)
+        {
+            filling.gameObject.SetActive(true);
+            fillingSpoon.gameObject.SetActive(true);
+        }
     }
 
     public void EnterDropZone()
