@@ -1044,11 +1044,11 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 588651952}
-          m_MethodName: SetDragItem
-          m_Mode: 2
+          m_MethodName: RemoveDragItem
+          m_Mode: 1
           m_Arguments:
-            m_ObjectArgument: {fileID: 1923026847}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
@@ -1745,11 +1745,11 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 588651952}
-          m_MethodName: SetDragItem
-          m_Mode: 2
+          m_MethodName: RemoveDragItem
+          m_Mode: 1
           m_Arguments:
-            m_ObjectArgument: {fileID: 1923026847}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
