@@ -6,6 +6,11 @@ using UnityEngine.SceneManagement;
 public class SceneChanger : MonoBehaviour
 {
     public GameObject credits, main;
+    public bool isStarting;
+
+    public void Awake(){
+        isStarting = false;
+    }
 
     public void Exit()
     {
@@ -26,9 +31,12 @@ public class SceneChanger : MonoBehaviour
 
     public void startGame()
     {
-
-        SceneManager.LoadScene("CamScene", LoadSceneMode.Additive);
-        SceneManager.LoadScene("SampleScene", LoadSceneMode.Additive);
+        if(!isStarting) {
+            isStarting = true;
+            SceneManager.LoadScene("CamScene", LoadSceneMode.Additive);
+            SceneManager.LoadScene("SampleScene", LoadSceneMode.Additive);
+        }
+        
 
         //SceneManager.UnloadSceneAsync(2);
 
