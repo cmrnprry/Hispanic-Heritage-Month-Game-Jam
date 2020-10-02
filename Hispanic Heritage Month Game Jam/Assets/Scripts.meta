@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
+guid: 090bd3da7d82a964daf3ba9e43bc5144
+=======
 guid: 34fdfc62c33ab4f01b98ca36fcb74637
+>>>>>>> SamBranch
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
