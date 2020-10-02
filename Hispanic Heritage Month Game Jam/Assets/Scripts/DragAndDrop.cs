@@ -12,7 +12,7 @@ public enum GameState
 
 public class DragAndDrop : MonoBehaviour
 {
-    public GameObject dragItem = null;
+    private GameObject dragItem = null;
 
     public Sprite[] images;
     public Image husk;
@@ -81,8 +81,6 @@ public class DragAndDrop : MonoBehaviour
             }
         }
 
-        //Debug.Log("Calling ResetAllObjects() from Masa");
-        //ResetAllObjects();
         //AddSpoon(1);
     }
 
@@ -107,8 +105,6 @@ public class DragAndDrop : MonoBehaviour
             }
         }
 
-        //Debug.Log("Calling ResetAllObjects() from Filling");
-        //ResetAllObjects();
         //AddSpoon(2);
     }
 
