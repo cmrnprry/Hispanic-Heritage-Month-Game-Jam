@@ -12,11 +12,13 @@ public enum GameState
 
 public class DragAndDrop : MonoBehaviour
 {
-    private GameObject dragItem = null;
+    public GameObject dragItem = null;
 
     public Sprite[] images;
     public Image husk;
     public bool isDropZone = false;
+
+    public bool isHoldingSomething = false;
     public Texture2D open, closed;
     public Texture2D[] hands;
     public GameState state = GameState.Masa;
@@ -33,7 +35,7 @@ public class DragAndDrop : MonoBehaviour
     {
         tray.GetComponent<Animator>();
         tamale.GetComponent<Animator>();
-        //  StartCoroutine(NextTamale());
+        // StartCoroutine(NextTamale());
 
     }
     private void Update()
@@ -50,10 +52,17 @@ public class DragAndDrop : MonoBehaviour
         if (Input.GetMouseButtonUp(0))
         {
             closed = hands[0];
-            
+            //we can assume if the button is released, we can reset the bowls
+            // and spoons to being active. 
+
+            //may want to remove the end drag events from Masa and Filling now.
+            AddSpoon(); 
+
             if (dragItem != null)
                 DropItem();
+
         }
+
     }
 
     void Masa()
@@ -72,7 +81,9 @@ public class DragAndDrop : MonoBehaviour
             }
         }
 
-        AddSpoon(1);
+        //Debug.Log("Calling ResetAllObjects() from Masa");
+        //ResetAllObjects();
+        //AddSpoon(1);
     }
 
     void Filling()
@@ -96,8 +107,9 @@ public class DragAndDrop : MonoBehaviour
             }
         }
 
-
-        AddSpoon(2);
+        //Debug.Log("Calling ResetAllObjects() from Filling");
+        //ResetAllObjects();
+        //AddSpoon(2);
     }
 
     void Fold()
@@ -169,10 +181,10 @@ public class DragAndDrop : MonoBehaviour
     {
         if (!Input.GetMouseButton(0)){
             dragItem = null;
-            //Resetting hand sprite to be empty
+            
+            //Resetting hand sprite to be empty.
             closed = hands[0];
         }
-           
     }
 
     //Sets the game Object to be dragged
@@ -201,30 +213,27 @@ public class DragAndDrop : MonoBehaviour
 
     public void RemoveSpoon(int type)
     {
+        //Disabling both bowl objects, since their events can be called when mousing over.
+        masa.gameObject.SetActive(false);
+        filling.gameObject.SetActive(false);
+
         if (type == 1)
         {
-            masa.gameObject.SetActive(false);
             masaSpoon.gameObject.SetActive(false);
         }
         else if (type == 2)
         {
-            filling.gameObject.SetActive(false);
             fillingSpoon.gameObject.SetActive(false);
-        }
+        }       
     }
 
-    void AddSpoon(int type)
-    {
-        if (type == 1)
-        {
-            masa.gameObject.SetActive(true);
-            masaSpoon.gameObject.SetActive(true);
-        }
-        else if (type == 2)
-        {
-            filling.gameObject.SetActive(true);
-            fillingSpoon.gameObject.SetActive(true);
-        }
+    void AddSpoon(){
+        //Changed to just set all to active, since we can assume we want all to
+        //be active on release.
+        masa.gameObject.SetActive(true);
+        masaSpoon.gameObject.SetActive(true);
+        filling.gameObject.SetActive(true);
+        fillingSpoon.gameObject.SetActive(true);
     }
 
     public void EnterDropZone()
