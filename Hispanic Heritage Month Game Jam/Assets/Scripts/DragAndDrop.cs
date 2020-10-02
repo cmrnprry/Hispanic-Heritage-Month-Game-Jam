@@ -12,7 +12,7 @@ public enum GameState
 
 public class DragAndDrop : MonoBehaviour
 {
-    private GameObject dragItem;
+    private GameObject dragItem = null;
 
     public Sprite[] images;
     public Image husk;
@@ -50,7 +50,9 @@ public class DragAndDrop : MonoBehaviour
         if (Input.GetMouseButtonUp(0))
         {
             closed = hands[0];
-            DropItem();
+            
+            if (dragItem != null)
+                DropItem();
         }
     }
 
@@ -70,13 +72,11 @@ public class DragAndDrop : MonoBehaviour
             }
         }
 
-
         AddSpoon(1);
     }
 
     void Filling()
     {
-
         if (isDropZone)
         {
             if (state != GameState.Filling)
@@ -90,7 +90,7 @@ public class DragAndDrop : MonoBehaviour
                 Debug.Log("add it");
 
                 state = GameState.Masa;
-                //husk = images[3];
+                husk.sprite = images[3];
                 Debug.Log("add it");
                 StartCoroutine(NextTamale());
             }
@@ -157,31 +157,38 @@ public class DragAndDrop : MonoBehaviour
                 break;
         }
 
+        dragItem = null;
+
     }
 
-    //Drags the clicked item
-    public void DragItem()
+    public void RemoveDragItem()
     {
-        dragItem.transform.position = Input.mousePosition;
+        if (!Input.GetMouseButton(0))
+            dragItem = null;
     }
 
     //Sets the game Object to be dragged
     public void SetDragItem(GameObject item)
     {
-        dragItem = item;
-
-        switch (dragItem.tag)
+        if (dragItem == null)
         {
-            case "Masa":
-                closed = hands[1];
-                break;
-            case "Filling":
-                closed = hands[2];
-                break;
-            default:
-                closed = hands[0];
-                break;
+            dragItem = item;
+
+
+            switch (dragItem.tag)
+            {
+                case "Masa":
+                    closed = hands[1];
+                    break;
+                case "Filling":
+                    closed = hands[2];
+                    break;
+                default:
+                    closed = hands[0];
+                    break;
+            }
         }
+
     }
 
     public void RemoveSpoon(int type)
