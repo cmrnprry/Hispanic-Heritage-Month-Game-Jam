@@ -1,0 +1,64 @@
+fileFormatVersion: 2
+guid: 40c6d85f7848d6e4ab35596f67254cf0
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 94073015eacc34c1d8fc6786e43d60ca, type: 3}
+  baseLanguageID: en-US
+  stringIDs:
+  - HHMJENGLISH-FULL 1-Start-0
+  - HHMJENGLISH-FULL 1-Start-1
+  - HHMJENGLISH-FULL 1-Start-2
+  - HHMJENGLISH-FULL 1-Start-3
+  - HHMJENGLISH-FULL 1-Start-4
+  - HHMJENGLISH-FULL 1-Start-5
+  - HHMJENGLISH-FULL 1-Start-6
+  - HHMJENGLISH-FULL 1-Start-7
+  - HHMJENGLISH-FULL 1-Start-8
+  - HHMJENGLISH-FULL 1-Start-9
+  - HHMJENGLISH-FULL 1-Start-10
+  - HHMJENGLISH-FULL 1-Start-11
+  - HHMJENGLISH-FULL 1-Start-12
+  - HHMJENGLISH-FULL 1-Start-13
+  - HHMJENGLISH-FULL 1-Start-14
+  - HHMJENGLISH-FULL 1-Start-15
+  - HHMJENGLISH-FULL 1-Start-16
+  - HHMJENGLISH-FULL 1-Start-17
+  - HHMJENGLISH-FULL 1-Start-18
+  - HHMJENGLISH-FULL 1-Start-19
+  - HHMJENGLISH-FULL 1-Start-20
+  - HHMJENGLISH-FULL 1-Start-21
+  - HHMJENGLISH-FULL 1-Start-22
+  - HHMJENGLISH-FULL 1-Start-23
+  - HHMJENGLISH-FULL 1-Start-24
+  - HHMJENGLISH-FULL 1-Start-25
+  - HHMJENGLISH-FULL 1-Start-26
+  - HHMJENGLISH-FULL 1-Start-27
+  - HHMJENGLISH-FULL 1-Start-28
+  - HHMJENGLISH-FULL 1-Start-29
+  - HHMJENGLISH-FULL 1-Start-30
+  - HHMJENGLISH-FULL 1-Start-31
+  - HHMJENGLISH-FULL 1-Start-32
+  - HHMJENGLISH-FULL 1-Start-33
+  - HHMJENGLISH-FULL 1-Start-34
+  - HHMJENGLISH-FULL 1-Start-35
+  - HHMJENGLISH-FULL 1-Start-36
+  - HHMJENGLISH-FULL 1-Start-37
+  - HHMJENGLISH-FULL 1-Start-38
+  - HHMJENGLISH-FULL 1-Start-39
+  - HHMJENGLISH-FULL 1-Start-40
+  - HHMJENGLISH-FULL 1-Start-41
+  - HHMJENGLISH-FULL 1-Start-42
+  - HHMJENGLISH-FULL 1-Start-43
+  - HHMJENGLISH-FULL 1-Start-44
+  - HHMJENGLISH-FULL 1-Start-45
+  compilationStatus: 1
+  isSuccesfullyCompiled: 1
+  compilationErrorMessage: 
+  baseLanguage: {fileID: 7128917941130120860, guid: 40c6d85f7848d6e4ab35596f67254cf0,
+    type: 3}
+  localizations: []

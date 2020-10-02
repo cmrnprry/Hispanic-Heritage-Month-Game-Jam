@@ -12,7 +12,7 @@ public enum GameState
 
 public class DragAndDrop : MonoBehaviour
 {
-    private GameObject dragItem = null;
+    private GameObject dragItem;
 
     public Sprite[] images;
     public Image husk;
@@ -50,9 +50,7 @@ public class DragAndDrop : MonoBehaviour
         if (Input.GetMouseButtonUp(0))
         {
             closed = hands[0];
-            
-            if (dragItem != null)
-                DropItem();
+            DropItem();
         }
     }
 
@@ -72,11 +70,13 @@ public class DragAndDrop : MonoBehaviour
             }
         }
 
+
         AddSpoon(1);
     }
 
     void Filling()
     {
+
         if (isDropZone)
         {
             if (state != GameState.Filling)
@@ -89,8 +89,8 @@ public class DragAndDrop : MonoBehaviour
                 husk.sprite = images[2];
                 Debug.Log("add it");
 
-                state = GameState.Fold;
-                husk.sprite = images[3];
+                state = GameState.Masa;
+                //husk = images[3];
                 Debug.Log("add it");
                 StartCoroutine(NextTamale());
             }
@@ -130,10 +130,6 @@ public class DragAndDrop : MonoBehaviour
         yield return new WaitForSecondsRealtime(1f);
         husk.sprite = images[0];
         tamale.SetTrigger("New");
-
-        yield return new WaitForSecondsRealtime(1.5f);
-
-        state = GameState.Masa;
     }
 
     private void UpdateHand(Texture2D hand)
@@ -161,38 +157,31 @@ public class DragAndDrop : MonoBehaviour
                 break;
         }
 
-        dragItem = null;
-
     }
 
-    public void RemoveDragItem()
+    //Drags the clicked item
+    public void DragItem()
     {
-        if (!Input.GetMouseButton(0))
-            dragItem = null;
+        dragItem.transform.position = Input.mousePosition;
     }
 
     //Sets the game Object to be dragged
     public void SetDragItem(GameObject item)
     {
-        if (dragItem == null)
+        dragItem = item;
+
+        switch (dragItem.tag)
         {
-            dragItem = item;
-
-
-            switch (dragItem.tag)
-            {
-                case "Masa":
-                    closed = hands[1];
-                    break;
-                case "Filling":
-                    closed = hands[2];
-                    break;
-                default:
-                    closed = hands[0];
-                    break;
-            }
+            case "Masa":
+                closed = hands[1];
+                break;
+            case "Filling":
+                closed = hands[2];
+                break;
+            default:
+                closed = hands[0];
+                break;
         }
-
     }
 
     public void RemoveSpoon(int type)

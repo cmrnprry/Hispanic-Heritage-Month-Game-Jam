@@ -5,23 +5,16 @@ using UnityEngine.SceneManagement;
 
 public class SceneChanger : MonoBehaviour
 {
-    public GameObject credits, main;
-
-    public void Exit()
+    // Start is called before the first frame update
+    void Start()
     {
-        Application.Quit();
+        
     }
 
-    public void Credits()
+    // Update is called once per frame
+    void Update()
     {
-        credits.SetActive(true);
-        main.SetActive(false);
-    }
-
-    public void Main()
-    {
-        credits.SetActive(false);
-        main.SetActive(true);
+        
     }
 
     public void startGame()

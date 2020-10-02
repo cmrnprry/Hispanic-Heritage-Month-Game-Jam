@@ -7,11 +7,23 @@ using Yarn.Unity;
 public class DialogueChanging : MonoBehaviour
 {
 
-    public YarnProgram curProgram;
-
-    public GameObject[] curSpeaker;
-
     public GameObject DialogueRunner;
+
+    public DialogueRunner runner;
+
+    public GameObject RedText;
+
+    public Sprite PinkImage;
+
+    public Sprite GreenImage;
+
+    public Sprite RedImage;
+
+    public Sprite BlueImage;
+
+    public Sprite OrangeImage; 
+
+    public Text curText; 
 
     private bool canGo = true;
 
@@ -37,7 +49,53 @@ public class DialogueChanging : MonoBehaviour
 
     public IEnumerator TextGoing()
     {
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1f);
+        
+        changText();
         UI.MarkLineComplete();
+    }
+
+    public void changText()
+    {
+        Debug.Log(runner.variableStorage.GetValue("$bubble").AsString);
+        switch (runner.variableStorage.GetValue("$bubble").AsString)
+        {
+            case "PINK":
+                curText.transform.position = new Vector3(667f, 325f, 0);
+                RedText.GetComponent<Image>().overrideSprite = PinkImage; 
+
+                
+                break;
+            case "BLUE":
+                curText.transform.position = new Vector3(-200f, 325f, 0);
+                RedText.GetComponent<Image>().overrideSprite = BlueImage;
+
+
+                break;
+            case "GREEN":
+                curText.transform.position = new Vector3(-600f, 325f, 0);
+                RedText.GetComponent<Image>().overrideSprite = GreenImage;
+
+
+                break;
+            case "ORANGE":
+                curText.transform.position = new Vector3(667f, 325f, 0);
+                RedText.GetComponent<Image>().overrideSprite = OrangeImage;
+
+
+                break;
+            case "RED":
+                curText.transform.position = new Vector3(5.1f, -228.9f, 0);
+
+                RedText.GetComponent<Image>().overrideSprite = RedImage;
+
+                break;
+            default:
+                break;
+
+        }
+        Debug.Log(RedText.GetComponent<Image>().sprite.name);
+        
+
     }
 }
