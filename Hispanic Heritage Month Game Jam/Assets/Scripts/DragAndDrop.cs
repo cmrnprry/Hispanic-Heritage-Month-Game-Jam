@@ -167,8 +167,12 @@ public class DragAndDrop : MonoBehaviour
 
     public void RemoveDragItem()
     {
-        if (!Input.GetMouseButton(0))
+        if (!Input.GetMouseButton(0)){
             dragItem = null;
+            //Resetting hand sprite to be empty
+            closed = hands[0];
+        }
+           
     }
 
     //Sets the game Object to be dragged
