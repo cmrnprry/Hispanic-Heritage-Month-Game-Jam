@@ -18,7 +18,6 @@ public class DragAndDrop : MonoBehaviour
     public Image husk;
     public bool isDropZone = false;
 
-    public bool isHoldingSomething = false;
     public Texture2D open, closed;
     public Texture2D[] hands;
     public GameState state = GameState.Masa;
