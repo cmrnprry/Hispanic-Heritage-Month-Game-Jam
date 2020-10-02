@@ -89,7 +89,7 @@ public class DragAndDrop : MonoBehaviour
                 husk.sprite = images[2];
                 Debug.Log("add it");
 
-                state = GameState.Masa;
+                state = GameState.Fold;
                 husk.sprite = images[3];
                 Debug.Log("add it");
                 StartCoroutine(NextTamale());
@@ -130,6 +130,10 @@ public class DragAndDrop : MonoBehaviour
         yield return new WaitForSecondsRealtime(1f);
         husk.sprite = images[0];
         tamale.SetTrigger("New");
+
+        yield return new WaitForSecondsRealtime(1.5f);
+
+        state = GameState.Masa;
     }
 
     private void UpdateHand(Texture2D hand)
