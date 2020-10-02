@@ -43,7 +43,8 @@ public class MusicManager : MonoBehaviour
     [SerializeField] private AudioMixerSnapshot baseLayerOnly;
     [SerializeField] private AudioMixerSnapshot layer2On;
     [SerializeField] private AudioMixerSnapshot layer3On;
-    [SerializeField] private AudioMixerSnapshot allLayerson;
+    [SerializeField] private AudioMixerSnapshot layers2and3;
+    [SerializeField] private AudioMixerSnapshot allLayersOn;
     [SerializeField] private AudioMixerSnapshot musicOff;
     [SerializeField] private float fadeInTime;
     [SerializeField] private float fadeOutTime;
@@ -86,6 +87,10 @@ public class MusicManager : MonoBehaviour
             MusicFull();
         }
         if (Input.GetKeyDown("b"))
+        {
+            MusicViolaAndMandolinOnly();
+        }
+        if (Input.GetKeyDown("n"))
         {
             MusicOff();
         }
@@ -172,9 +177,14 @@ public class MusicManager : MonoBehaviour
         layer3On.TransitionTo(fadeInTime);
     }
 
+    public void MusicViolaAndMandolinOnly()
+    {
+        layers2and3.TransitionTo(fadeInTime);
+    }
+
     public void MusicFull()
     {
-        allLayerson.TransitionTo(fadeInTime);
+        allLayersOn.TransitionTo(fadeInTime);
     }
 
     public void MusicOff()
