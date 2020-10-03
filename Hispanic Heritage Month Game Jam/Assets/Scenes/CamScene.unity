@@ -526,7 +526,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: fc04a311188fe8246bef0b025d478410, type: 3}
   - {fileID: 21300000, guid: 08f74f5138db5fc4cb9f4ff1fd1e082f, type: 3}
   - {fileID: 21300000, guid: 29675f99ff26ba94a8e125cdc7ac0bd9, type: 3}
-  - {fileID: 21300000, guid: 60faa5ae7f9cad54980d17a25dc6ea0d, type: 3}
+  - {fileID: 21300000, guid: 2a975d76f7ff8ed428b8ac7d64ef1e0e, type: 3}
   husk: {fileID: 476321243}
   husk2: {fileID: 1995174923}
   isDropZone: 0
