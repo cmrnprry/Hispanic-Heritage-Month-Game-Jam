@@ -157,8 +157,11 @@ public class DragAndDrop : MonoBehaviour
 
     public void RemoveDragItem()
     {
-        if (!Input.GetMouseButton(0))
+        if (!Input.GetMouseButton(0)){
             dragItem = null;
+            //Resetting closed hand sprite to be empty when mouse exits the bowl area
+            closed = hands[0];
+        }
     }
 
     //Sets the game Object to be dragged
