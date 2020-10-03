@@ -34,13 +34,19 @@ public class DragAndDrop : MonoBehaviour
         tray.GetComponent<Animator>();
         tamale.GetComponent<Animator>();
         //  StartCoroutine(NextTamale());
-
     }
     private void Update()
     {
         if (Input.GetMouseButton(0))
         {
             UpdateHand(closed);
+            //Maybe keep this??
+            if(dragItem != null){
+                //Added this because you could hold down and hover over a bowl
+                //So we could either disable bowls while clicked, or we
+                //can just remove the spoon this way. 
+                DragRemoveSpoon();
+            }
         }
         else
         {
@@ -187,6 +193,26 @@ public class DragAndDrop : MonoBehaviour
 
     }
 
+    void DragRemoveSpoon()
+    {
+        //We only call this if drag item is not null, so we don't have to worry about
+        //checking here
+
+        switch (dragItem.tag)
+        {
+            case "Masa":
+                RemoveSpoon(1);
+                break;
+            case "Filling":
+                RemoveSpoon(2);
+                break;
+            default:
+                Debug.Log("oh no :c");
+                break;
+        }
+
+    }
+
     public void RemoveSpoon(int type)
     {
         //Disabling both prevents issues with hovering over while already holding a spoon
@@ -221,4 +247,5 @@ public class DragAndDrop : MonoBehaviour
     {
         isDropZone = false;
     }
+
 }
