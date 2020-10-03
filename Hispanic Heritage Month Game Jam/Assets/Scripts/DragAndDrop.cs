@@ -16,6 +16,7 @@ public class DragAndDrop : MonoBehaviour
 
     public Sprite[] images;
     public Image husk;
+    public Image husk2;
     public bool isDropZone = false;
     public Texture2D open, closed;
     public Texture2D[] hands;
@@ -27,6 +28,7 @@ public class DragAndDrop : MonoBehaviour
 
     public Animator tray;
     public Animator tamale;
+    public Animator tamale2;
 
 
     private void Start()
@@ -70,10 +72,9 @@ public class DragAndDrop : MonoBehaviour
             {
                 state = GameState.Filling;
                 husk.sprite = images[1];
-                Debug.Log("add it");
+                Debug.Log("add masa");
             }
         }
-
 
         AddSpoon();
     }
@@ -89,13 +90,10 @@ public class DragAndDrop : MonoBehaviour
             }
             else
             {
-                // state = GameState.Fold;
                 husk.sprite = images[2];
-                Debug.Log("add it");
+                Debug.Log("add it filling");
 
                 state = GameState.Fold;
-                husk.sprite = images[3];
-                Debug.Log("add it");
                 StartCoroutine(NextTamale());
             }
         }
@@ -106,7 +104,19 @@ public class DragAndDrop : MonoBehaviour
 
     IEnumerator NextTamale()
     {
+        yield return new WaitForSecondsRealtime(.5f);
+        husk2.gameObject.SetActive(true);
+        husk.gameObject.SetActive(false);
+        tamale2.SetTrigger("Fold");
+
+        yield return new WaitForSecondsRealtime(1.5f);
+
+        husk.sprite = images[3];
+
         tray.SetTrigger("Show");
+
+        husk2.gameObject.SetActive(false);
+        husk.gameObject.SetActive(true);
 
         yield return new WaitForSecondsRealtime(1.5f);
 
@@ -118,12 +128,12 @@ public class DragAndDrop : MonoBehaviour
 
         yield return new WaitForSecondsRealtime(1f);
         husk.sprite = images[0];
+
         tamale.SetTrigger("New");
 
         yield return new WaitForSecondsRealtime(1.5f);
         AddSpoon();
         state = GameState.Masa;
-
     }
 
     private void UpdateHand(Texture2D hand)
@@ -157,7 +167,8 @@ public class DragAndDrop : MonoBehaviour
 
     public void RemoveDragItem()
     {
-        if (!Input.GetMouseButton(0)){
+        if (!Input.GetMouseButton(0))
+        {
             dragItem = null;
             //Resetting closed hand sprite to be empty when mouse exits the bowl area
             closed = hands[0];
@@ -209,7 +220,6 @@ public class DragAndDrop : MonoBehaviour
         masaSpoon.gameObject.SetActive(true);
         filling.gameObject.SetActive(true);
         fillingSpoon.gameObject.SetActive(true);
-
     }
 
     public void EnterDropZone()
