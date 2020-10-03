@@ -23,23 +23,40 @@ public class DialogueChanging : MonoBehaviour
 
     public Sprite OrangeImage; 
 
-    public Text curText; 
+    public Text curText;
+
+    public YarnProgram[] programs;
 
     private bool canGo = true;
 
     private DialogueUI UI;
+
+    private bool isEnglish = true; 
 
 
     // Start is called before the first frame update
     void Start()
     {
         UI = DialogueRunner.GetComponent<DialogueUI>();
+        isEnglish = GameObject.Find("Main Camera").GetComponent<SceneChanger>().isEnglish;
+
+        if (isEnglish)
+        {
+            runner.yarnScripts[0] = programs[0];
+        }
+        else if (!isEnglish)
+        {
+            runner.yarnScripts[0] = programs[1];
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        if (Input.GetKeyDown("space"))
+        {
+            UI.MarkLineComplete();
+        }
     }
 
     public void startText()

@@ -601,6 +601,9 @@ MonoBehaviour:
   BlueImage: {fileID: 21300000, guid: 1e8ba6882f1f6c84bab2cd4f246be281, type: 3}
   OrangeImage: {fileID: 21300000, guid: 7205d2cd9100d0543a148b235bcde21d, type: 3}
   curText: {fileID: 1887782116}
+  programs:
+  - {fileID: 2480198943629176163, guid: 40c6d85f7848d6e4ab35596f67254cf0, type: 3}
+  - {fileID: 2480198943629176163, guid: 026bed4e52d60f94fbecc1d2eb1ee441, type: 3}
 --- !u!114 &5935829475219851894
 MonoBehaviour:
   m_ObjectHideFlags: 0
