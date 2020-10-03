@@ -630,9 +630,7 @@ MonoBehaviour:
     type: 2}
   layer3On: {fileID: 6302226307849181097, guid: e9973adc677384407abdde7d6b25ea63,
     type: 2}
-  layers2and3: {fileID: 5832273350113137264, guid: e9973adc677384407abdde7d6b25ea63,
-    type: 2}
-  allLayersOn: {fileID: 7760059862592883760, guid: e9973adc677384407abdde7d6b25ea63,
+  allLayerson: {fileID: 7760059862592883760, guid: e9973adc677384407abdde7d6b25ea63,
     type: 2}
   musicOff: {fileID: 2858981487740924368, guid: e9973adc677384407abdde7d6b25ea63,
     type: 2}

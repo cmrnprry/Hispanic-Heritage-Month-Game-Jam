@@ -1,0 +1,63 @@
+fileFormatVersion: 2
+guid: 026bed4e52d60f94fbecc1d2eb1ee441
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 94073015eacc34c1d8fc6786e43d60ca, type: 3}
+  baseLanguageID: 
+  stringIDs:
+  - HHMJSPANISH-FULL 1-Start-0
+  - HHMJSPANISH-FULL 1-Start-1
+  - HHMJSPANISH-FULL 1-Start-2
+  - HHMJSPANISH-FULL 1-Start-3
+  - HHMJSPANISH-FULL 1-Start-4
+  - HHMJSPANISH-FULL 1-Start-5
+  - HHMJSPANISH-FULL 1-Start-6
+  - HHMJSPANISH-FULL 1-Start-7
+  - HHMJSPANISH-FULL 1-Start-8
+  - HHMJSPANISH-FULL 1-Start-9
+  - HHMJSPANISH-FULL 1-Start-10
+  - HHMJSPANISH-FULL 1-Start-11
+  - HHMJSPANISH-FULL 1-Start-12
+  - HHMJSPANISH-FULL 1-Start-13
+  - HHMJSPANISH-FULL 1-Start-14
+  - HHMJSPANISH-FULL 1-Start-15
+  - HHMJSPANISH-FULL 1-Start-16
+  - HHMJSPANISH-FULL 1-Start-17
+  - HHMJSPANISH-FULL 1-Start-18
+  - HHMJSPANISH-FULL 1-Start-19
+  - HHMJSPANISH-FULL 1-Start-20
+  - HHMJSPANISH-FULL 1-Start-21
+  - HHMJSPANISH-FULL 1-Start-22
+  - HHMJSPANISH-FULL 1-Start-23
+  - HHMJSPANISH-FULL 1-Start-24
+  - HHMJSPANISH-FULL 1-Start-25
+  - HHMJSPANISH-FULL 1-Start-26
+  - HHMJSPANISH-FULL 1-Start-27
+  - HHMJSPANISH-FULL 1-Start-28
+  - HHMJSPANISH-FULL 1-Start-29
+  - HHMJSPANISH-FULL 1-Start-30
+  - HHMJSPANISH-FULL 1-Start-31
+  - HHMJSPANISH-FULL 1-Start-32
+  - HHMJSPANISH-FULL 1-Start-33
+  - HHMJSPANISH-FULL 1-Start-34
+  - HHMJSPANISH-FULL 1-Start-35
+  - HHMJSPANISH-FULL 1-Start-36
+  - HHMJSPANISH-FULL 1-Start-37
+  - HHMJSPANISH-FULL 1-Start-38
+  - HHMJSPANISH-FULL 1-Start-39
+  - HHMJSPANISH-FULL 1-Start-40
+  - HHMJSPANISH-FULL 1-Start-41
+  - HHMJSPANISH-FULL 1-Start-42
+  - HHMJSPANISH-FULL 1-Start-43
+  - HHMJSPANISH-FULL 1-Start-44
+  - HHMJSPANISH-FULL 1-Start-45
+  compilationStatus: 1
+  isSuccesfullyCompiled: 1
+  compilationErrorMessage: 
+  baseLanguage: {instanceID: 0}
+  localizations: []

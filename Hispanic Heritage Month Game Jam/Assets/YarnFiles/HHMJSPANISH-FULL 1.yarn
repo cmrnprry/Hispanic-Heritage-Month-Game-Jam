@@ -1,0 +1,189 @@
+title: Start
+tags: 
+colorID: 1
+position: -293,-533
+---
+//Tia2-ORANGE
+<<set $bubble to "ORANGE">>
+¿Cuántos tamales queremos hacer?
+
+//Mom-GREEN
+<<set $bubble to "GREEN" >> 
+Al menos cien para que la gente pueda llevarse a su casa.
+
+//Tia2-ORANGE
+<<set $bubble to "ORANGE">>
+Ok.
+
+//Tia1-PINK
+<<set $bubble to "PINK">>
+No puedo creer que Hector no vino con su familia. Es como si no le importara que estemos tratando de juntarnos.
+
+//Grandma-BLUE
+<<set $bubble to "BLUE">>
+¿Dónde están sus hijos?
+
+//Tia2-ORANGE
+<<set $bubble to "ORANGE">>
+Estoy segura que andan juntos. Están muy grandes para que les importe estar aquí.
+
+//Tia1-PINK
+<<set $bubble to "PINK">>
+Si, es como una vez que ya tienen la edad suficiente para conducir, ya no se les puede ver.
+
+//Mom-GREEN
+<<set $bubble to "GREEN">>
+Es como sacar los dientes para traer a limitad de nosotros aquí. ¿Recuerdas cuando todos nos reunimos cada domingo?
+
+//Tia2-ORANGE
+<<set $bubble to "ORANGE">>
+Ahora los días festivos son quizás porque la gente quiere relajarse los fines de semana. ¡Pues, relajense con la familia!
+
+//Mom-GREEN
+<<set $bubble to "GREEN">>
+NO TOKEN ESTOS QUE NO ESTÁN LISTOS. Les juro que ustedes güercos nunca quieren ayudarnos en la cocina pero siempre andan entremetidos.
+
+//Grandma-BLUE
+<<set $bubble to "BLUE">>
+Les llamo cuando estén listos, cariño, solo vayan a jugar.
+
+//Mom-GREEN
+<<set $bubble to "GREEN">>
+Ama, ¿como tiene tanta paciencia?
+
+//Grandma-BLUE
+<<set $bubble to "BLUE">>
+Una buena comida se toma tiempo y yo las tengo ustedes para ayudarme. Yo solo estoy feliz de tener a mis niñas.
+
+//Tia1-PINK
+<<set $bubble to "PINK">>
+¿Escuchaste que Maria está embarazada?
+
+//Mom-GREEN
+<<set $bubble to "GREEN">>
+Nombre. ¿De verdad?
+
+//Tia1-PINK
+<<set $bubble to "PINK">>
+¡Sí! Ella no le quiere decir a nadie pero su mama me lo dijo a mi.
+
+//Tia2-ORANGE
+<<set $bubble to "ORANGE">>
+Pero ella no está casada, ¿verdad?
+
+//Tia1-PINK
+<<set $bubble to "PINK">>
+¡No!
+
+//Grandma-BLUE
+<<set $bubble to "BLUE">>
+Ay dios mío.
+
+//Mom-GREEN
+<<set $bubble to "GREEN">>
+¿Se va a casar con ella?
+
+//Tia1-PINK
+<<set $bubble to "PINK">>
+No estoy segura. Aún no ha propuesto matrimonio.
+
+//Tia2-ORANGE
+<<set $bubble to "ORANGE">>
+Sin embargo, es emocionante volver a tener un bebé en la familia.
+
+//Mom-GREEN
+<<set $bubble to "GREEN">>
+Yo tambien. Extraño cuando mis bebés eran bebés.
+
+//Mom-GREEN
+<<set $bubble to "GREEN">>
+Realmente desearía que papá estuviera aquí.
+
+//Tia1-PINK
+<<set $bubble to "PINK">>
+Yeah.
+
+//Grandma-BLUE
+<<set $bubble to "BLUE">>
+Recuerdo cuando nos conocimos. Era un hombre tan arrogante porque era boxeador, pero todas las chicas lo querían.
+
+//Tia2-ORANGE
+<<set $bubble to "ORANGE">>
+Pero él la quería a usted.
+
+//Grandma-BLUE
+<<set $bubble to "BLUE">>
+Seguro que sí. No le di otra opción. Trato de escribir una pequeña carta de amor pidiéndome que fuera su novia pero le dije, ‘¿Estás bromeando? No!’ Le dije que si estaba en serio, me llevaría al cine y rechazaría a las otras chicas que lo querían a él.
+
+//Tia1-PINK
+<<set $bubble to "PINK">>
+¿Y lo hizo?
+
+//Grandma-BLUE
+<<set $bubble to "BLUE">>
+Claro que sí.
+
+//Mom-GREEN
+<<set $bubble to "GREEN">>
+Estaba envuelto alrededor de su dedito.
+
+//Mom-GREEN
+<<set $bubble to "GREEN">>
+¡Jajaja!
+
+//Tia1-PINK
+<<set $bubble to "PINK">>
+¡Jajaja!
+
+//Tia2-ORANGE
+<<set $bubble to "ORANGE">>
+¡Jajaja!
+
+//Grandma-BLUE
+<<set $bubble to "BLUE">>
+¡Jajaja!
+
+//Tia1-PINK
+<<set $bubble to "PINK">>
+Ahora que mamá está afuera del cuarto, ¿de verdad creen que estará mejor en México? Todos sus hijos y nietos están aquí.
+
+//Mom-GREEN
+<<set $bubble to "GREEN">>
+Bueno pues… Papá construyó su casa allí. Todos nuestros recuerdos están allí.
+
+//Tia2-ORANGE
+<<set $bubble to "ORANGE">>
+Ella ya no recuerda las cosas cuando está aquí. Tampoco es que podamos estar aquí con ella todo el tiempo.
+
+//Tia1-PINK
+<<set $bubble to "PINK">>
+Estamos hablando de cinco o más horas de conducción solo para ver a mamá. ¿Qué pasa si nos necesita en medio de la noche?
+
+//Mom-GREEN
+<<set $bubble to "GREEN">>
+¡Entonces vamos! Podemos contratar a alguien para que la cuide todos los días. Nosotras vamos a estar bien, pero no podemos ser egoístas al no dejarla volver a lo que la hace feliz.
+
+//Tia1-PINK
+<<set $bubble to "PINK">>
+Quizás tengas razón…
+
+//Mom-GREEN
+<<set $bubble to "GREEN">>
+Por supuesto que tengo razón… ¡No estás poniendo suficiente masa ahí, mira! Déjame hacer estos últimos. Vete a ver novelas con mamá.
+
+//Child-RED
+<<set $bubble to "RED">>
+Los domingos ya no serán domingos si abuelita se muda.
+
+//Mom-GREEN
+<<set $bubble to "GREEN">>
+La familia sigue siendo familia. Siempre encontraremos la manera de estar conectados.
+
+//Child-RED
+<<set $bubble to "RED">>
+¿Crees que alguna vez volveremos a estar juntos así?
+
+//Tia1-PINK
+<<set $bubble to "PINK">>
+Ok, ya es suficiente mamita. Creo que estamos bien. Gracias.
+===
