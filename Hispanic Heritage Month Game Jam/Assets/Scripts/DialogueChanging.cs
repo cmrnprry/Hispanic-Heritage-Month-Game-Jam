@@ -49,7 +49,7 @@ public class DialogueChanging : MonoBehaviour
 
     public IEnumerator TextGoing()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(2f);
         
         changText();
         UI.MarkLineComplete();
@@ -61,31 +61,31 @@ public class DialogueChanging : MonoBehaviour
         switch (runner.variableStorage.GetValue("$bubble").AsString)
         {
             case "PINK":
-                curText.transform.position = new Vector3(667f, 325f, 0);
+                curText.transform.localPosition = new Vector3(600f, 325f, 0);
                 RedText.GetComponent<Image>().overrideSprite = PinkImage; 
 
                 
                 break;
             case "BLUE":
-                curText.transform.position = new Vector3(-200f, 325f, 0);
+                curText.transform.localPosition = new Vector3(-575f, 322.5385f, 0);
                 RedText.GetComponent<Image>().overrideSprite = BlueImage;
 
 
                 break;
             case "GREEN":
-                curText.transform.position = new Vector3(-600f, 325f, 0);
+                curText.transform.localPosition = new Vector3(-575f, 322.5385f, 0);
                 RedText.GetComponent<Image>().overrideSprite = GreenImage;
 
 
                 break;
             case "ORANGE":
-                curText.transform.position = new Vector3(667f, 325f, 0);
+                curText.transform.localPosition = new Vector3(600f, 325f, 0);
                 RedText.GetComponent<Image>().overrideSprite = OrangeImage;
 
 
                 break;
             case "RED":
-                curText.transform.position = new Vector3(5.1f, -228.9f, 0);
+                curText.transform.localPosition = new Vector3(5.1f, -228.9f, 0);
 
                 RedText.GetComponent<Image>().overrideSprite = RedImage;
 
