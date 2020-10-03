@@ -157,8 +157,11 @@ public class DragAndDrop : MonoBehaviour
 
     public void RemoveDragItem()
     {
-        if (!Input.GetMouseButton(0))
+        if (!Input.GetMouseButton(0)){
             dragItem = null;
+            //Resetting closed hand sprite to be empty when mouse exits the bowl area
+            closed = hands[0];
+        }
     }
 
     //Sets the game Object to be dragged
@@ -186,14 +189,16 @@ public class DragAndDrop : MonoBehaviour
 
     public void RemoveSpoon(int type)
     {
+        //Disabling both prevents issues with hovering over while already holding a spoon
+        masa.gameObject.SetActive(false);
+        filling.gameObject.SetActive(false);
+
         if (type == 1)
         {
-            masa.gameObject.SetActive(false);
             masaSpoon.gameObject.SetActive(false);
         }
         else if (type == 2)
         {
-            filling.gameObject.SetActive(false);
             fillingSpoon.gameObject.SetActive(false);
         }
     }
