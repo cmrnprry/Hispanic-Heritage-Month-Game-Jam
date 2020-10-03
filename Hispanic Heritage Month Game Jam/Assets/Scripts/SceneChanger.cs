@@ -2,11 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class SceneChanger : MonoBehaviour
 {
     public GameObject credits, main;
+    public GameObject languageButton; 
     public bool isStarting;
+    public bool isEnglish = true; 
 
     public void Awake(){
         isStarting = false;
@@ -39,6 +42,25 @@ public class SceneChanger : MonoBehaviour
         
 
         //SceneManager.UnloadSceneAsync(2);
+
+    }
+
+    public void toggleIsEnglish()
+    {
+        isEnglish = !isEnglish;
+        toggleLanguage();
+    }
+
+    public void toggleLanguage()
+    {
+        if (isEnglish)
+        {
+            languageButton.GetComponentInChildren<Text>().text = "English";
+        }
+        else if (!isEnglish)
+        {
+            languageButton.GetComponentInChildren<Text>().text = "Español";
+        }
 
     }
 }

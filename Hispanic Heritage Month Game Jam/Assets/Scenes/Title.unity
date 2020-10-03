@@ -362,6 +362,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   credits: {fileID: 1915899683}
   main: {fileID: 1357072369}
+  languageButton: {fileID: 480369969}
+  isStarting: 0
+  isEnglish: 0
 --- !u!81 &158357625
 AudioListener:
   m_ObjectHideFlags: 0
@@ -820,7 +823,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 480369972}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 158357624}
+        m_MethodName: toggleIsEnglish
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &480369972
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1483,7 +1497,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Language Toggle
+  m_Text: "Espa\xF1ol"
 --- !u!222 &1161382886
 CanvasRenderer:
   m_ObjectHideFlags: 0
