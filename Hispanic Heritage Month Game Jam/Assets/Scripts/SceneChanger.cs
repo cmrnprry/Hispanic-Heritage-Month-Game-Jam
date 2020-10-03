@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class SceneChanger : MonoBehaviour
 {
     public GameObject credits, main;
-    public GameObject languageButton; 
+    public GameObject languageToggle;
     public bool isStarting;
     public bool isEnglish = true; 
 
@@ -34,7 +34,7 @@ public class SceneChanger : MonoBehaviour
 
     public void startGame()
     {
-        if(!isStarting) {
+        if (!isStarting) {
             isStarting = true;
             SceneManager.LoadScene("CamScene", LoadSceneMode.Additive);
             SceneManager.LoadScene("SampleScene", LoadSceneMode.Additive);
@@ -45,22 +45,21 @@ public class SceneChanger : MonoBehaviour
 
     }
 
-    public void toggleIsEnglish()
-    {
-        isEnglish = !isEnglish;
-        toggleLanguage();
-    }
-
     public void toggleLanguage()
     {
-        if (isEnglish)
+
+  
+        if (languageToggle.GetComponent<Toggle>().isOn)
         {
-            languageButton.GetComponentInChildren<Text>().text = "English";
+            isEnglish = true;
         }
-        else if (!isEnglish)
+        else if (!languageToggle.GetComponent<Toggle>().isOn)
         {
-            languageButton.GetComponentInChildren<Text>().text = "Español";
+            isEnglish = false;
+           
         }
+        Debug.Log("what could it be" + isEnglish);
+
 
     }
 }

@@ -31,14 +31,18 @@ public class DialogueChanging : MonoBehaviour
 
     private DialogueUI UI;
 
-    private bool isEnglish = true; 
+    private bool isEnglish = true;
+
 
 
     // Start is called before the first frame update
     void Start()
     {
+
         UI = DialogueRunner.GetComponent<DialogueUI>();
         isEnglish = GameObject.Find("Main Camera").GetComponent<SceneChanger>().isEnglish;
+
+        Debug.Log("HOw could it be" + isEnglish);
 
         if (isEnglish)
         {
