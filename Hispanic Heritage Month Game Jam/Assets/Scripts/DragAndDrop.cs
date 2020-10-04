@@ -59,10 +59,6 @@ public class DragAndDrop : MonoBehaviour
             AddSpoon();
         }
 
-        if (Input.GetKey(KeyCode.Escape))
-        {
-            Application.Quit();
-        }
     }
 
     void Masa()
