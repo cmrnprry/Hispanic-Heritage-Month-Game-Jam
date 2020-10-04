@@ -520,11 +520,22 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 5935829475219851892}
+        m_MethodName: startText
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
   onLineFinishDisplaying:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 5935829475219851892}
-        m_MethodName: startText
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -604,6 +615,7 @@ MonoBehaviour:
   programs:
   - {fileID: 2480198943629176163, guid: b199532e41468c04f9cd65a6fc6c9ee6, type: 3}
   - {fileID: 2480198943629176163, guid: 026bed4e52d60f94fbecc1d2eb1ee441, type: 3}
+  changTextLate: 0
 --- !u!114 &5935829475219851894
 MonoBehaviour:
   m_ObjectHideFlags: 0
