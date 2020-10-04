@@ -113,7 +113,11 @@ Pero él la quería a usted.
 
 //Grandma-BLUE
 <<set $bubble to "BLUE">>
-Seguro que sí. No le di otra opción. Trato de escribir una pequeña carta de amor pidiéndome que fuera su novia pero le dije, ‘¿Estás bromeando? No!’ Le dije que si estaba en serio, me llevaría al cine y rechazaría a las otras chicas que lo querían a él.
+Seguro que sí. No le di otra opción. Trato de escribir una pequeña carta de amor pidiéndome que fuera su novia pero le dije, 
+
+//Grandma-BLUE
+<<set $bubble to "BLUE">>
+‘¿Estás bromeando? No!’ Le dije que si estaba en serio, me llevaría al cine y rechazaría a las otras chicas que lo querían a él.
 
 //Tia1-PINK
 <<set $bubble to "PINK">>
