@@ -437,7 +437,7 @@ MonoBehaviour:
   main: {fileID: 1357072369}
   languageToggle: {fileID: 1825393193}
   isStarting: 0
-  isEnglish: 0
+  isEnglish: 1
 --- !u!81 &158357625
 AudioListener:
   m_ObjectHideFlags: 0
