@@ -2886,7 +2886,11 @@ MonoBehaviour:
     Camera - Programmer
 
 
-    Cam Perry - Programmer'
+    Cam Perry - Programmer
+
+
+    Brent Oakes - Programmer
+    / QA'
 --- !u!222 &2087043631
 CanvasRenderer:
   m_ObjectHideFlags: 0
