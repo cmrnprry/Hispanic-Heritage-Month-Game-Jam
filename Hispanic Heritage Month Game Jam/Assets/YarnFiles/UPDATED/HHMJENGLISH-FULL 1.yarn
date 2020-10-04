@@ -15,11 +15,9 @@ At least a hundred. So people can take some home.
 <<set $bubble to "ORANGE">>
 Ok.
 
- 
 //Tia1-PINK
 <<set $bubble to "PINK">>
 I cannot believe that Hector didn't show up today with his family. It's like he doesn't care that we're trying to get together.
- 
 
 //Grandma-BLUE
 <<set $bubble to "BLUE">> 
@@ -41,12 +39,10 @@ It's like pulling teeth to get half of us here. Do you remember when we'd all sh
 << set $bubble to "ORANGE">>
 Now holidays are a maybe and people want to relax on weekends. Relax with family!
 
-
 //Mom-GREEN
 <<set $bubble to "GREEN">>
 DON'T TOUCH THOSE, THEY'RE NOT READY. I swear, you boys never want to help us in the kitchen, but you always want to poke around.
  
-
 //Grandma-BLUE
 <<set $bubble to "BLUE">>
 We'll call you when it's ready, sweetie, just go play.
@@ -59,12 +55,10 @@ Mom, how do you have so much patience?
 <<set $bubble to "BLUE">>
 Good food takes time, and I have you all to help me. I'm just happy to have my girls.
  
-
 //Tia1-PINK
 <<set $bubble to "PINK">>
 Did you hear Maria is pregnant?
  
-
 //Mom-GREEN
 <<set $bubble to "GREEN">>
 No way. Really?
@@ -101,12 +95,10 @@ It's kind of exciting to have a baby in the family again, though.
 <<set $bubble to "GREEN">>
 Me, too. I miss when my babies were babies.
  
-
 //Mom-GREEN
 <<set $bubble to "GREEN">>
 I really wish dad was here.
  
-
 //Tia1-PINK
 <<set $bubble to "PINK">>
 Yeah.
@@ -155,12 +147,10 @@ Hahaha!
 <<set $bubble to "BLUE">>
 Hahaha!
 
-
 //Tia1-PINK
 <<set $bubble to "PINK">>
 Now that mom's out of the room, do you really think she'd be better in Mexico? All of her children and grandchildren are here.
  
-
 //Mom-GREEN
 <<set $bubble to "GREEN">>
 I mean… Dad built her their house there. All our memories are there.
@@ -197,7 +187,6 @@ Family is still family. We'll always find a way to stay connected.
 <<set $bubble to "RED">>
 Do you think we'll ever be together like this again?
 
- 
 //Tia1-PINK
 <<set $bubble to "PINK">>
 Okay that's enough mamita. I think we're good. Thank you.
