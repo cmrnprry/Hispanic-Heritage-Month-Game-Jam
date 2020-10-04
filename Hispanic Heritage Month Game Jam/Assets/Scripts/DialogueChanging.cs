@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using Yarn.Unity;
+using UnityEngine.SceneManagement;
 
 public class DialogueChanging : MonoBehaviour
 {
@@ -79,6 +80,27 @@ public class DialogueChanging : MonoBehaviour
     public IEnumerator KeepGoing()
     {
         yield return new WaitForSeconds(5f);
+    }
+
+    public void OnEnd()
+    {
+        StartCoroutine(End());
+    }
+
+    IEnumerator End()
+    {
+
+        SceneManager.LoadScene("End", LoadSceneMode.Additive);
+        SceneManager.UnloadSceneAsync(1);
+
+        Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
+
+        yield return new WaitForSecondsRealtime(10f);
+   
+        SceneManager.UnloadSceneAsync(3);
+        
+        SceneManager.UnloadSceneAsync(2);
+
     }
 
     public void changText()
