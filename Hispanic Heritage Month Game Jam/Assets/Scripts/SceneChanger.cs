@@ -11,6 +11,7 @@ public class SceneChanger : MonoBehaviour
     public bool isStarting;
     public bool isEnglish = true; 
 
+
     public void Awake(){
         isStarting = false;
     }
@@ -38,12 +39,16 @@ public class SceneChanger : MonoBehaviour
             isStarting = true;
             SceneManager.LoadScene("CamScene", LoadSceneMode.Additive);
             SceneManager.LoadScene("SampleScene", LoadSceneMode.Additive);
-            isStarting = false;
         }
         
 
         //SceneManager.UnloadSceneAsync(2);
+    }
 
+
+    public void ResetGame()
+    {
+        isStarting = false;
     }
 
     public void toggleLanguage()
