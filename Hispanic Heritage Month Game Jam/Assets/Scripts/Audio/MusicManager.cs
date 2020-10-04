@@ -54,6 +54,8 @@ public class MusicManager : MonoBehaviour
     private double endingDelayInSeconds = 24;
     private double loopDuration = 31;
     private double nextStartTime;
+    private float timer;
+    [SerializeField] private SceneChanger sceneChanger;
     #endregion
 
     void Start()
@@ -69,30 +71,23 @@ public class MusicManager : MonoBehaviour
             PlayAndLoopMusic();
         }
 
-        //Change layer based on input for testing only
-        if (Input.GetKeyDown("z"))
+        if (sceneChanger.isStarting)
         {
-            MusicGuitarOnly();
-        }
-        if (Input.GetKeyDown("x"))
-        {
-            MusicMandolinOn();
-        }
-        if (Input.GetKeyDown("c"))
-        {
-            MusicViolaOn();
-        }
-        if (Input.GetKeyDown("v"))
-        {
-            MusicFull();
-        }
-        if (Input.GetKeyDown("b"))
-        {
-            MusicViolaAndMandolinOnly();
-        }
-        if (Input.GetKeyDown("n"))
-        {
-            MusicOff();
+            timer += Time.deltaTime;
+            print(timer);
+
+            if(timer > 60 && timer < 65)
+            {
+                MusicMandolinOn();
+            }
+            else if(timer > 120 && timer < 125)
+            {
+                MusicViolaOn();
+            }
+            else if(timer > 170 && timer < 175)
+            {
+                MusicFull();
+            }
         }
     }
 
