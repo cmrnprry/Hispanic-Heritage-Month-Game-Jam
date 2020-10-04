@@ -121,7 +121,11 @@ But he wanted you!
 
 //Grandma-BLUE
 <<set $bubble to "BLUE">>
-He sure did. I gave him no choice! He tried to write me a little love letter asking me to be his girlfriend but I said, "Are you kidding me? No!"" I told him if he was really serious, he would take me to the movies and reject all the other girls who liked him.
+He sure did. I gave him no choice! He tried to write me a little love letter asking me to be his girlfriend but I said, 
+
+//Grandma-BLUE
+<<set $bubble to "BLUE">>
+"Are you kidding me? No!"" I told him if he was really serious, he would take me to the movies and reject all the other girls who liked him.
 
 //Tia1-PINK
 <<set $bubble to "PINK">>
