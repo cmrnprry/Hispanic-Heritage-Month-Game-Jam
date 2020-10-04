@@ -129,7 +129,7 @@ public class DialogueChanging : MonoBehaviour
             switch (runner.variableStorage.GetValue("$bubble").AsString)
             {
                 case "PINK":
-                    curText.transform.localPosition = new Vector3(600f, 325f, 0);
+                    curText.transform.localPosition = new Vector3(575, 325f, 0);
                     RedText.GetComponent<Image>().overrideSprite = PinkImage;
 
 
@@ -148,7 +148,7 @@ public class DialogueChanging : MonoBehaviour
                     break;
                 case "ORANGE":
 
-                    curText.transform.localPosition = new Vector3(600f, 325f, 0);
+                    curText.transform.localPosition = new Vector3(575, 325f, 0);
                     RedText.GetComponent<Image>().overrideSprite = OrangeImage;
 
 
