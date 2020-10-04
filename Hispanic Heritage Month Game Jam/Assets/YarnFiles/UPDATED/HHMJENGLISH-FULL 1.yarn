@@ -15,11 +15,11 @@ At least a hundred. So people can take some home.
 <<set $bubble to "ORANGE">>
 Ok.
 
-<< set $pause to 1>> 
+ 
 //Tia1-PINK
 <<set $bubble to "PINK">>
 I cannot believe that Hector didn't show up today with his family. It's like he doesn't care that we're trying to get together.
-<< set $pause to 0>> 
+ 
 
 //Grandma-BLUE
 <<set $bubble to "BLUE">> 
@@ -40,12 +40,12 @@ It's like pulling teeth to get half of us here. Do you remember when we'd all sh
 //Tia2-ORANGE
 << set $bubble to "ORANGE">>
 Now holidays are a maybe and people want to relax on weekends. Relax with family!
-<< set $pause to 1>>
+
 
 //Mom-GREEN
 <<set $bubble to "GREEN">>
 DON'T TOUCH THOSE, THEY'RE NOT READY. I swear, you boys never want to help us in the kitchen, but you always want to poke around.
-<< set $pause to 0>> 
+ 
 
 //Grandma-BLUE
 <<set $bubble to "BLUE">>
@@ -58,12 +58,12 @@ Mom, how do you have so much patience?
 //Grandma-BLUE
 <<set $bubble to "BLUE">>
 Good food takes time, and I have you all to help me. I'm just happy to have my girls.
-<< set $pause to 1>> 
+ 
 
 //Tia1-PINK
 <<set $bubble to "PINK">>
 Did you hear Maria is pregnant?
-<< set $pause to 0>> 
+ 
 
 //Mom-GREEN
 <<set $bubble to "GREEN">>
@@ -100,12 +100,12 @@ It's kind of exciting to have a baby in the family again, though.
 //Mom-GREEN
 <<set $bubble to "GREEN">>
 Me, too. I miss when my babies were babies.
-<< set $pause to 1>> 
+ 
 
 //Mom-GREEN
 <<set $bubble to "GREEN">>
 I really wish dad was here.
-<< set $pause to 0>> 
+ 
 
 //Tia1-PINK
 <<set $bubble to "PINK">>
@@ -155,11 +155,11 @@ Hahaha!
 <<set $bubble to "BLUE">>
 Hahaha!
 
-<< set $pause to 1 >> 
+
 //Tia1-PINK
 <<set $bubble to "PINK">>
 Now that mom's out of the room, do you really think she'd be better in Mexico? All of her children and grandchildren are here.
-<< set $pause to 0>> 
+ 
 
 //Mom-GREEN
 <<set $bubble to "GREEN">>
@@ -197,7 +197,7 @@ Family is still family. We'll always find a way to stay connected.
 <<set $bubble to "RED">>
 Do you think we'll ever be together like this again?
 
-<< set $pause to 1>> 
+ 
 //Tia1-PINK
 <<set $bubble to "PINK">>
 Okay that's enough mamita. I think we're good. Thank you.
