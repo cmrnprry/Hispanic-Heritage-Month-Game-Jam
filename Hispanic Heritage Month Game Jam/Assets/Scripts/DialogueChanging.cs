@@ -33,6 +33,7 @@ public class DialogueChanging : MonoBehaviour
 
     private bool isEnglish = true;
 
+    public bool changTextLate;
 
 
     // Start is called before the first frame update
@@ -61,19 +62,25 @@ public class DialogueChanging : MonoBehaviour
         {
             UI.MarkLineComplete();
         }
+
+        if(changTextLate){
+            changTextLate = false;
+            changText();
+        }
     }
 
     public void startText()
     {
-        StartCoroutine("TextGoing");
+        //StartCoroutine("TextGoing");
+        changTextLate = true;
     }
 
     public IEnumerator TextGoing()
     {
         yield return new WaitForSeconds(2f);
         
-        UI.MarkLineComplete();
-        changText();
+        //UI.MarkLineComplete();
+        //changText();
     }
 
     public IEnumerator KeepGoing()
@@ -92,7 +99,7 @@ public class DialogueChanging : MonoBehaviour
             {
                 case "PINK":
                     curText.transform.localPosition = new Vector3(600f, 325f, 0);
-                    RedText.GetComponent<Image>().overrideSprite = OrangeImage;
+                    RedText.GetComponent<Image>().overrideSprite = PinkImage;
 
 
                     break;
@@ -111,7 +118,7 @@ public class DialogueChanging : MonoBehaviour
                 case "ORANGE":
 
                     curText.transform.localPosition = new Vector3(600f, 325f, 0);
-                    RedText.GetComponent<Image>().overrideSprite = PinkImage;
+                    RedText.GetComponent<Image>().overrideSprite = OrangeImage;
 
 
 
