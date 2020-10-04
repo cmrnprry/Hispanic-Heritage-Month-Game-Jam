@@ -1,0 +1,63 @@
+fileFormatVersion: 2
+guid: 6b8cc6b93cdf68245ba2ae9afc28e2ec
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 94073015eacc34c1d8fc6786e43d60ca, type: 3}
+  baseLanguageID: 
+  stringIDs:
+  - HHMJENGLISH-FULL 2-Start-0
+  - HHMJENGLISH-FULL 2-Start-1
+  - HHMJENGLISH-FULL 2-Start-2
+  - HHMJENGLISH-FULL 2-Start-3
+  - HHMJENGLISH-FULL 2-Start-4
+  - HHMJENGLISH-FULL 2-Start-5
+  - HHMJENGLISH-FULL 2-Start-6
+  - HHMJENGLISH-FULL 2-Start-7
+  - HHMJENGLISH-FULL 2-Start-8
+  - HHMJENGLISH-FULL 2-Start-9
+  - HHMJENGLISH-FULL 2-Start-10
+  - HHMJENGLISH-FULL 2-Start-11
+  - HHMJENGLISH-FULL 2-Start-12
+  - HHMJENGLISH-FULL 2-Start-13
+  - HHMJENGLISH-FULL 2-Start-14
+  - HHMJENGLISH-FULL 2-Start-15
+  - HHMJENGLISH-FULL 2-Start-16
+  - HHMJENGLISH-FULL 2-Start-17
+  - HHMJENGLISH-FULL 2-Start-18
+  - HHMJENGLISH-FULL 2-Start-19
+  - HHMJENGLISH-FULL 2-Start-20
+  - HHMJENGLISH-FULL 2-Start-21
+  - HHMJENGLISH-FULL 2-Start-22
+  - HHMJENGLISH-FULL 2-Start-23
+  - HHMJENGLISH-FULL 2-Start-24
+  - HHMJENGLISH-FULL 2-Start-25
+  - HHMJENGLISH-FULL 2-Start-26
+  - HHMJENGLISH-FULL 2-Start-27
+  - HHMJENGLISH-FULL 2-Start-28
+  - HHMJENGLISH-FULL 2-Start-29
+  - HHMJENGLISH-FULL 2-Start-30
+  - HHMJENGLISH-FULL 2-Start-31
+  - HHMJENGLISH-FULL 2-Start-32
+  - HHMJENGLISH-FULL 2-Start-33
+  - HHMJENGLISH-FULL 2-Start-34
+  - HHMJENGLISH-FULL 2-Start-35
+  - HHMJENGLISH-FULL 2-Start-36
+  - HHMJENGLISH-FULL 2-Start-37
+  - HHMJENGLISH-FULL 2-Start-38
+  - HHMJENGLISH-FULL 2-Start-39
+  - HHMJENGLISH-FULL 2-Start-40
+  - HHMJENGLISH-FULL 2-Start-41
+  - HHMJENGLISH-FULL 2-Start-42
+  - HHMJENGLISH-FULL 2-Start-43
+  - HHMJENGLISH-FULL 2-Start-44
+  - HHMJENGLISH-FULL 2-Start-45
+  compilationStatus: 1
+  isSuccesfullyCompiled: 1
+  compilationErrorMessage: 
+  baseLanguage: {instanceID: 0}
+  localizations: []
