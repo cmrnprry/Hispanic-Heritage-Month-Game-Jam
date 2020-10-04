@@ -630,13 +630,16 @@ MonoBehaviour:
     type: 2}
   layer3On: {fileID: 6302226307849181097, guid: e9973adc677384407abdde7d6b25ea63,
     type: 2}
-  allLayerson: {fileID: 7760059862592883760, guid: e9973adc677384407abdde7d6b25ea63,
+  layers2and3: {fileID: 5832273350113137264, guid: e9973adc677384407abdde7d6b25ea63,
+    type: 2}
+  allLayersOn: {fileID: 7760059862592883760, guid: e9973adc677384407abdde7d6b25ea63,
     type: 2}
   musicOff: {fileID: 2858981487740924368, guid: e9973adc677384407abdde7d6b25ea63,
     type: 2}
   fadeInTime: 2
   fadeOutTime: 4
   musicOutTime: 10
+  sceneChanger: {fileID: 0}
 --- !u!1 &2371168814347498339
 GameObject:
   m_ObjectHideFlags: 0
