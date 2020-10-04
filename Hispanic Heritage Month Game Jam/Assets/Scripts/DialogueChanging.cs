@@ -72,53 +72,65 @@ public class DialogueChanging : MonoBehaviour
     {
         yield return new WaitForSeconds(2f);
         
-        changText();
         UI.MarkLineComplete();
+        changText();
+    }
+
+    public IEnumerator KeepGoing()
+    {
+        yield return new WaitForSeconds(5f);
     }
 
     public void changText()
     {
+
         Debug.Log(runner.variableStorage.GetValue("$bubble").AsString);
-        switch (runner.variableStorage.GetValue("$bubble").AsString)
+        Debug.Log("Current stuff" + runner.variableStorage.GetValue("pause").AsNumber);
+        if (runner.variableStorage.GetValue("$pause").AsNumber != 1)
         {
-            case "PINK":
-                curText.transform.localPosition = new Vector3(600f, 325f, 0);
-                RedText.GetComponent<Image>().overrideSprite = OrangeImage;
+            switch (runner.variableStorage.GetValue("$bubble").AsString)
+            {
+                case "PINK":
+                    curText.transform.localPosition = new Vector3(600f, 325f, 0);
+                    RedText.GetComponent<Image>().overrideSprite = OrangeImage;
 
 
-                break;
-            case "BLUE":
-                curText.transform.localPosition = new Vector3(-575f, 322.5385f, 0);
-                RedText.GetComponent<Image>().overrideSprite = BlueImage;
+                    break;
+                case "BLUE":
+                    curText.transform.localPosition = new Vector3(-575f, 322.5385f, 0);
+                    RedText.GetComponent<Image>().overrideSprite = BlueImage;
 
 
-                break;
-            case "GREEN":
-                curText.transform.localPosition = new Vector3(-575f, 322.5385f, 0);
-                RedText.GetComponent<Image>().overrideSprite = GreenImage;
+                    break;
+                case "GREEN":
+                    curText.transform.localPosition = new Vector3(-575f, 322.5385f, 0);
+                    RedText.GetComponent<Image>().overrideSprite = GreenImage;
 
 
-                break;
-            case "ORANGE":
+                    break;
+                case "ORANGE":
 
-                curText.transform.localPosition = new Vector3(600f, 325f, 0);
-                RedText.GetComponent<Image>().overrideSprite = PinkImage;
+                    curText.transform.localPosition = new Vector3(600f, 325f, 0);
+                    RedText.GetComponent<Image>().overrideSprite = PinkImage;
 
 
 
-                break;
-            case "RED":
-                curText.transform.localPosition = new Vector3(5.1f, -228.9f, 0);
+                    break;
+                case "RED":
+                    curText.transform.localPosition = new Vector3(5.1f, -228.9f, 0);
 
-                RedText.GetComponent<Image>().overrideSprite = RedImage;
+                    RedText.GetComponent<Image>().overrideSprite = RedImage;
 
-                break;
-            default:
-                break;
+                    break;
+                default:
+                    break;
 
+            }
         }
-        Debug.Log(RedText.GetComponent<Image>().sprite.name);
-        
-
+        else if (runner.variableStorage.GetValue("$pause").AsNumber == 0)
+        {
+            Debug.Log("Reached");
+            StartCoroutine("KeepGoing"); }
+       
     }
 }

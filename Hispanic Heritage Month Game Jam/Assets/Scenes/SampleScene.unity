@@ -427,8 +427,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 602, y: 316}
-  m_SizeDelta: {x: 503.23795, y: 146.21962}
+  m_AnchoredPosition: {x: 580, y: 328}
+  m_SizeDelta: {x: 459.19382, y: 170.12932}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1887782116
 MonoBehaviour:
@@ -444,7 +444,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -453,9 +453,9 @@ MonoBehaviour:
     m_Font: {fileID: 12800000, guid: 5f8bbcd1e89f6cc49bbd49b87fee9ae0, type: 3}
     m_FontSize: 1
     m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 0
-    m_MaxSize: 40
+    m_BestFit: 1
+    m_MinSize: 1
+    m_MaxSize: 20
     m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -602,7 +602,7 @@ MonoBehaviour:
   OrangeImage: {fileID: 21300000, guid: 7205d2cd9100d0543a148b235bcde21d, type: 3}
   curText: {fileID: 1887782116}
   programs:
-  - {fileID: 2480198943629176163, guid: 40c6d85f7848d6e4ab35596f67254cf0, type: 3}
+  - {fileID: 2480198943629176163, guid: b199532e41468c04f9cd65a6fc6c9ee6, type: 3}
   - {fileID: 2480198943629176163, guid: 026bed4e52d60f94fbecc1d2eb1ee441, type: 3}
 --- !u!114 &5935829475219851894
 MonoBehaviour:
