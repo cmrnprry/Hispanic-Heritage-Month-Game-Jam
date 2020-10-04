@@ -37,12 +37,16 @@ public class DialogueChanging : MonoBehaviour
     public bool changTextLate;
 
 
+    //sneaky fix
+    public SceneChanger sceneChanger;
+
     // Start is called before the first frame update
     void Start()
     {
 
         UI = DialogueRunner.GetComponent<DialogueUI>();
-        isEnglish = GameObject.Find("Main Camera").GetComponent<SceneChanger>().isEnglish;
+        sceneChanger = GameObject.Find("Main Camera").GetComponent<SceneChanger>();
+        isEnglish = sceneChanger.isEnglish;
 
         Debug.Log("HOw could it be" + isEnglish);
 
@@ -54,6 +58,8 @@ public class DialogueChanging : MonoBehaviour
         {
             runner.yarnScripts[0] = programs[1];
         }
+
+
     }
 
     // Update is called once per frame
@@ -101,6 +107,8 @@ public class DialogueChanging : MonoBehaviour
         SceneManager.UnloadSceneAsync(1);
 
         Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
+        
+        sceneChanger.ResetGame();
 
         yield return new WaitForSecondsRealtime(10f);
    
@@ -108,6 +116,7 @@ public class DialogueChanging : MonoBehaviour
         
         SceneManager.UnloadSceneAsync(2);
 
+        
     }
 
     public void changText()
