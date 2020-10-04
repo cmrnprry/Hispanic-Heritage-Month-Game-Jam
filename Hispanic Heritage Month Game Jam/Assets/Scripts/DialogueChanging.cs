@@ -83,9 +83,9 @@ public class DialogueChanging : MonoBehaviour
         {
             case "PINK":
                 curText.transform.localPosition = new Vector3(600f, 325f, 0);
-                RedText.GetComponent<Image>().overrideSprite = PinkImage; 
+                RedText.GetComponent<Image>().overrideSprite = OrangeImage;
 
-                
+
                 break;
             case "BLUE":
                 curText.transform.localPosition = new Vector3(-575f, 322.5385f, 0);
@@ -100,8 +100,10 @@ public class DialogueChanging : MonoBehaviour
 
                 break;
             case "ORANGE":
+
                 curText.transform.localPosition = new Vector3(600f, 325f, 0);
-                RedText.GetComponent<Image>().overrideSprite = OrangeImage;
+                RedText.GetComponent<Image>().overrideSprite = PinkImage;
+
 
 
                 break;
