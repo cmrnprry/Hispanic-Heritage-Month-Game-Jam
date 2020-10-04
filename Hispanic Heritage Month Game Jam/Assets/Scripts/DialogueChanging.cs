@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using Yarn.Unity;
+using UnityEngine.SceneManagement;
 
 public class DialogueChanging : MonoBehaviour
 {
@@ -33,6 +34,7 @@ public class DialogueChanging : MonoBehaviour
 
     private bool isEnglish = true;
 
+    public bool changTextLate;
 
 
     // Start is called before the first frame update
@@ -61,24 +63,51 @@ public class DialogueChanging : MonoBehaviour
         {
             UI.MarkLineComplete();
         }
+
+        if(changTextLate){
+            changTextLate = false;
+            changText();
+        }
     }
 
     public void startText()
     {
-        StartCoroutine("TextGoing");
+        //StartCoroutine("TextGoing");
+        changTextLate = true;
     }
 
     public IEnumerator TextGoing()
     {
         yield return new WaitForSeconds(2f);
         
-        UI.MarkLineComplete();
-        changText();
+        //UI.MarkLineComplete();
+        //changText();
     }
 
     public IEnumerator KeepGoing()
     {
         yield return new WaitForSeconds(5f);
+    }
+
+    public void OnEnd()
+    {
+        StartCoroutine(End());
+    }
+
+    IEnumerator End()
+    {
+
+        SceneManager.LoadScene("End", LoadSceneMode.Additive);
+        SceneManager.UnloadSceneAsync(1);
+
+        Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
+
+        yield return new WaitForSecondsRealtime(10f);
+   
+        SceneManager.UnloadSceneAsync(3);
+        
+        SceneManager.UnloadSceneAsync(2);
+
     }
 
     public void changText()
@@ -92,7 +121,7 @@ public class DialogueChanging : MonoBehaviour
             {
                 case "PINK":
                     curText.transform.localPosition = new Vector3(600f, 325f, 0);
-                    RedText.GetComponent<Image>().overrideSprite = OrangeImage;
+                    RedText.GetComponent<Image>().overrideSprite = PinkImage;
 
 
                     break;
@@ -111,7 +140,7 @@ public class DialogueChanging : MonoBehaviour
                 case "ORANGE":
 
                     curText.transform.localPosition = new Vector3(600f, 325f, 0);
-                    RedText.GetComponent<Image>().overrideSprite = PinkImage;
+                    RedText.GetComponent<Image>().overrideSprite = OrangeImage;
 
 
 

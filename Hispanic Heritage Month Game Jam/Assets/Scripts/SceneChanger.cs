@@ -38,6 +38,7 @@ public class SceneChanger : MonoBehaviour
             isStarting = true;
             SceneManager.LoadScene("CamScene", LoadSceneMode.Additive);
             SceneManager.LoadScene("SampleScene", LoadSceneMode.Additive);
+            isStarting = false;
         }
         
 
