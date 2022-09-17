@@ -74,7 +74,6 @@ public class MusicManager : MonoBehaviour
         if (sceneChanger.isStarting)
         {
             timer += Time.deltaTime;
-            print(timer);
 
             if(timer > 60 && timer < 65)
             {

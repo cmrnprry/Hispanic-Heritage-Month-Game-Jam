@@ -30,6 +30,7 @@ public class DragAndDrop : MonoBehaviour
     public Animator tamale;
     public Animator tamale2;
 
+    public GameObject pause;
 
     private void Start()
     {
@@ -40,28 +41,26 @@ public class DragAndDrop : MonoBehaviour
     }
     private void Update()
     {
-        if (Input.GetMouseButton(0))
+        if (!pause.activeSelf)
         {
-            UpdateHand(closed);
-        }
-        else
-        {
-            UpdateHand(open);
-        }
+            if (Input.GetMouseButton(0))
+            {
+                UpdateHand(closed);
+            }
+            else
+            {
+                UpdateHand(open);
+            }
 
-        if (Input.GetMouseButtonUp(0))
-        {
-            closed = hands[0];
+            if (Input.GetMouseButtonUp(0))
+            {
+                closed = hands[0];
 
-            if (dragItem != null)
-                DropItem();
+                if (dragItem != null)
+                    DropItem();
 
-            AddSpoon();
-        }
-
-        if (Input.GetKey(KeyCode.Escape))
-        {
-            Application.Quit();
+                AddSpoon();
+            }
         }
     }
 
