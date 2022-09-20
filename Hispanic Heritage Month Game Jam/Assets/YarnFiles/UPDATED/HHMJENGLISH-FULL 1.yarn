@@ -41,8 +41,8 @@ Now holidays are a maybe and people want to relax on weekends. Relax with family
 
 //Mom-GREEN
 <<set $bubble to "GREEN">>
-DON'T TOUCH THOSE, THEY'RE NOT READY. I swear, you boys never want to help us in the kitchen, but you always want to poke around.
- 
+Do not touch those, they're not ready! I swear, you boys never want to help us in the kitchen, but you always want to poke around.
+
 //Grandma-BLUE
 <<set $bubble to "BLUE">>
 We'll call you when it's ready, sweetie, just go play.
@@ -54,11 +54,11 @@ Mom, how do you have so much patience?
 //Grandma-BLUE
 <<set $bubble to "BLUE">>
 Good food takes time, and I have you all to help me. I'm just happy to have my girls.
- 
+
 //Tia1-PINK
 <<set $bubble to "PINK">>
-Did you hear Maria is pregnant?
- 
+Speaking of girls... Did you hear Maria is pregnant?
+
 //Mom-GREEN
 <<set $bubble to "GREEN">>
 No way. Really?
@@ -94,18 +94,18 @@ It's kind of exciting to have a baby in the family again, though.
 //Mom-GREEN
 <<set $bubble to "GREEN">>
 Me, too. I miss when my babies were babies.
- 
+
 //Mom-GREEN
 <<set $bubble to "GREEN">>
-I really wish dad was here.
- 
+I really wish dad was here to see everyone.
+
 //Tia1-PINK
 <<set $bubble to "PINK">>
 Yeah.
 
 //Grandma-BLUE
 <<set $bubble to "BLUE">>
-I remember when we first met. He was such a cocky man because he was a boxer but all the girls wanted him.
+I remember when we first met. He was such a cocky man because he was a boxer, but all the girls wanted him.
 
 //Tia2-ORANGE
 <<set $bubble to "ORANGE">>
@@ -113,11 +113,11 @@ But he wanted you!
 
 //Grandma-BLUE
 <<set $bubble to "BLUE">>
-He sure did. I gave him no choice! He tried to write me a little love letter asking me to be his girlfriend but I said, 
+He sure did. I gave him no choice! He tried to write me a love letter asking me to be his girlfriend but I said, "Are you kidding me? No!"
 
 //Grandma-BLUE
 <<set $bubble to "BLUE">>
-"Are you kidding me? No!"" I told him if he was really serious, he would take me to the movies and reject all the other girls who liked him.
+I told him if he was really serious, he would reject all the other girls who liked him and then take me to the movies.
 
 //Tia1-PINK
 <<set $bubble to "PINK">>
@@ -131,26 +131,18 @@ Of course he did.
 <<set $bubble to "GREEN">>
 He was wrapped around your finger.
 
+<<set $laugh to 1>>
+
 //Mom-GREEN
 <<set $bubble to "GREEN">>
 Hahaha!
 
-//Tia1-PINK
-<<set $bubble to "PINK">>
-Hahaha!
-
-//Tia2-ORANGE
-<<set $bubble to "ORANGE">>
-Hahaha!
-
-//Grandma-BLUE
-<<set $bubble to "BLUE">>
-Hahaha!
+<<set $laugh to 0>>
 
 //Tia1-PINK
 <<set $bubble to "PINK">>
 Now that mom's out of the room, do you really think she'd be better in Mexico? All of her children and grandchildren are here.
- 
+
 //Mom-GREEN
 <<set $bubble to "GREEN">>
 I mean… Dad built her their house there. All our memories are there.
@@ -189,5 +181,5 @@ Do you think we'll ever be together like this again?
 
 //Tia1-PINK
 <<set $bubble to "PINK">>
-Okay that's enough mamita. I think we're good. Thank you.
+Ok, that's enough tamales, mamita. I think we're good. Thank you.
 ===

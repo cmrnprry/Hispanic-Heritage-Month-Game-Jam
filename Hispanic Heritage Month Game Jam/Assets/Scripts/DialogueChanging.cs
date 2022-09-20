@@ -14,6 +14,7 @@ public class DialogueChanging : MonoBehaviour
     public DialogueRunner runner;
 
     public GameObject RedText;
+
     public GameObject BlueText;
     public GameObject GreenText;
     public GameObject PinkText;
@@ -53,8 +54,16 @@ public class DialogueChanging : MonoBehaviour
         sceneChanger = GameObject.Find("Main Camera").GetComponent<SceneChanger>();
         isEnglish = sceneChanger.isEnglish;
 
-        Debug.Log("HOw could it be" + isEnglish);
+        BlueText.SetActive(false);
+        GreenText.SetActive(false);
+        OrangeText.SetActive(false);
+        PinkText.SetActive(false);
 
+        //English Build
+        //runner.yarnScripts[0] = programs[0];
+        //SpanishBuild
+        runner.yarnScripts[0] = programs[1];
+        /*
         if (isEnglish)
         {
             runner.yarnScripts[0] = programs[0];
@@ -63,7 +72,7 @@ public class DialogueChanging : MonoBehaviour
         {
             runner.yarnScripts[0] = programs[1];
         }
-
+        */
 
     }
 
@@ -129,7 +138,30 @@ public class DialogueChanging : MonoBehaviour
     {
 
         Debug.Log(runner.variableStorage.GetValue("$bubble").AsString);
-        Debug.Log("Current stuff" + runner.variableStorage.GetValue("pause").AsNumber);
+        Debug.Log("Current stuff" + runner.variableStorage.GetValue("$pause").AsNumber);
+
+
+        var laughValue = runner.variableStorage.GetValue("$laugh").AsNumber;
+        Debug.Log("Laughing " + laughValue);
+        if(laughValue == 1)
+        {
+            RedText.SetActive(false);
+            //We are gonna do something slightly different
+            BlueText.SetActive(true);
+            GreenText.SetActive(true);
+            OrangeText.SetActive(true);
+            PinkText.SetActive(true);
+        }
+        else
+        {
+            RedText.SetActive(true);
+
+            BlueText.SetActive(false);
+            GreenText.SetActive(false);
+            OrangeText.SetActive(false);
+            PinkText.SetActive(false);
+        }
+
         if (runner.variableStorage.GetValue("$pause").AsNumber != 1)
         {
             switch (runner.variableStorage.GetValue("$bubble").AsString)
@@ -137,35 +169,24 @@ public class DialogueChanging : MonoBehaviour
                 case "PINK":
                     curText.transform.localPosition = new Vector3(575, 325f, 0);
                     RedText.GetComponent<Image>().overrideSprite = PinkImage;
-
-
                     break;
                 case "BLUE":
                     curText.transform.localPosition = new Vector3(-575f, 322.5385f, 0);
                     RedText.GetComponent<Image>().overrideSprite = BlueImage;
-
-
                     break;
                 case "GREEN":
                     curText.transform.localPosition = new Vector3(-575f, 322.5385f, 0);
                     RedText.GetComponent<Image>().overrideSprite = GreenImage;
-
-
                     break;
                 case "ORANGE":
-
                     curText.transform.localPosition = new Vector3(575, 325f, 0);
                     RedText.GetComponent<Image>().overrideSprite = OrangeImage;
-
-
-
                     break;
                 case "RED":
                     curText.transform.localPosition = new Vector3(5.1f, -228.9f, 0);
-
                     RedText.GetComponent<Image>().overrideSprite = RedImage;
-
                     break;
+
                 default:
                     break;
 
@@ -174,7 +195,8 @@ public class DialogueChanging : MonoBehaviour
         else if (runner.variableStorage.GetValue("$pause").AsNumber == 0)
         {
             Debug.Log("Reached");
-            StartCoroutine("KeepGoing"); }
+            StartCoroutine("KeepGoing"); 
+        }
        
     }
 }

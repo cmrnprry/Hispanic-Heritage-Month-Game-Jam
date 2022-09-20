@@ -131,21 +131,12 @@ Claro que sí.
 <<set $bubble to "GREEN">>
 Estaba envuelto alrededor de su dedito.
 
+<<set $laugh to 1>>
+
 //Mom-GREEN
-<<set $bubble to "GREEN">>
 ¡Jajaja!
 
-//Tia1-PINK
-<<set $bubble to "PINK">>
-¡Jajaja!
-
-//Tia2-ORANGE
-<<set $bubble to "ORANGE">>
-¡Jajaja!
-
-//Grandma-BLUE
-<<set $bubble to "BLUE">>
-¡Jajaja!
+<<set $laugh to 0>>
 
 //Tia1-PINK
 <<set $bubble to "PINK">>
