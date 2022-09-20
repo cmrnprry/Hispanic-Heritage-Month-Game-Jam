@@ -41,7 +41,7 @@ Ahora los días festivos son quizás porque la gente quiere relajarse los fines 
 
 //Mom-GREEN
 <<set $bubble to "GREEN">>
-NO TOKEN ESTOS QUE NO ESTÁN LISTOS. Les juro que ustedes güercos nunca quieren ayudarnos en la cocina pero siempre andan entremetidos.
+NO TOKEN ESTOS QUE NO ESTÁN LISTOS! Les juro que ustedes güercos nunca quieren ayudarnos en la cocina pero siempre andan entremetidos.
 
 //Grandma-BLUE
 <<set $bubble to "BLUE">>
@@ -189,5 +189,5 @@ La familia sigue siendo familia. Siempre encontraremos la manera de estar conect
 
 //Tia1-PINK
 <<set $bubble to "PINK">>
-Ok, ya es suficiente mamita. Creo que estamos bien. Gracias.
+Ok, ya es suficiente, mamita. Creo que estamos bien. Gracias.
 ===

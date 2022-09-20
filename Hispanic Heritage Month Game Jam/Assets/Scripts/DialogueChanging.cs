@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using Yarn.Unity;
 using UnityEngine.SceneManagement;
 
+
 public class DialogueChanging : MonoBehaviour
 {
 
@@ -13,6 +14,10 @@ public class DialogueChanging : MonoBehaviour
     public DialogueRunner runner;
 
     public GameObject RedText;
+    public GameObject BlueText;
+    public GameObject GreenText;
+    public GameObject PinkText;
+    public GameObject OrangeText;
 
     public Sprite PinkImage;
 
@@ -65,7 +70,8 @@ public class DialogueChanging : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown("space"))
+        //MouseButton.RightMouse = 1 (don't know why i can't just use the name)
+        if (Input.GetMouseButtonDown(1))
         {
             UI.MarkLineComplete();
         }

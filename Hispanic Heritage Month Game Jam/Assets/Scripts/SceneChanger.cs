@@ -53,8 +53,6 @@ public class SceneChanger : MonoBehaviour
 
     public void toggleLanguage()
     {
-
-  
         if (languageToggle.GetComponent<Toggle>().isOn)
         {
             isEnglish = true;
@@ -64,8 +62,6 @@ public class SceneChanger : MonoBehaviour
             isEnglish = false;
            
         }
-        Debug.Log("what could it be" + isEnglish);
-
 
     }
 }
